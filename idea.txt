@@ -8,3 +8,13 @@ Website to hold company info:
 	-Account Registration
 	-Due Dates
 	-Materials Required
+
++-------------+
+|   SIDEBAR   |
++-------------+
+|  Dashboard  |
++-------------+
+|    Tasks    |
++-------------+
+|Communication|
++-------------+
