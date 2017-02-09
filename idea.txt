@@ -1,0 +1,10 @@
+  +----------------------+
+  |*Project Task Manager*|
+  +----------------------+
+Website to hold company info:
+
+	-Tasks
+	-Embedded chat (Within server)
+	-Account Registration
+	-Due Dates
+	-Materials Required
