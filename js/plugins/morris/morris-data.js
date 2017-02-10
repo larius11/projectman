@@ -6,33 +6,33 @@ $(function() {
     Morris.Area({
         element: 'morris-area-chart',
         data: [{
-            period: '2010 Q1',
-            iphone: 30,
+            period: '2016 Q1',
+            ipm: 30,
             ipad: 97,
             itouch: 0.6
         },{
-            period: '2010 Q2',
-            iphone: 31,
+            period: '2016 Q2',
+            ipm: 31,
             ipad: 98,
             itouch: 0.2
         },{
-            period: '2010 Q3',
-            iphone: 28,
+            period: '2016 Q3',
+            ipm: 28,
             ipad: 93,
             itouch: 0.1
         },{
-            period: '2010 Q4',
-            iphone: 29,
+            period: '2016 Q4',
+            ipm: 29,
             ipad: 95,
             itouch: 0.5
         },{
-            period: '2011 Q1',
-            iphone: 31,
+            period: '2017 Q1',
+            ipm: 31,
             ipad: 99,
             itouch: 0.6
         }],
         xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
+        ykeys: ['ipm', 'ipad', 'itouch'],
         labels: ['IPM\'s', 'BPTS', 'Dept. Entry'],
         pointSize: 2,
         hideHover: 'auto',
@@ -43,10 +43,10 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "CER's done",
+            label: "Counts On Me done",
             value: 52
         }, {
-            label: "CER's needed",
+            label: "Counts On Me needed",
             value: 12
         }],
         resize: true
