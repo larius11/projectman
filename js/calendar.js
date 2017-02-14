@@ -77,7 +77,7 @@ if(!String.prototype.formatNum) {
 		// Useful if response is not constrained by date.
 		events_cache: false,
 		// Set format12 to true if you want to use 12 Hour format instead of 24 Hour
-		format12: false,
+		format12: true,
 		am_suffix: "AM",
 		pm_suffix: "PM",
 		// Path to templates should end with slash /. It can be as relative
@@ -104,7 +104,7 @@ if(!String.prototype.formatNum) {
 			}
 		},
 		// ID of the element of modal window. If set, events URLs will be opened in modal windows.
-		modal: null,
+		modal: 1,
 		//	modal handling setting, one of "iframe", "ajax" or "template"
 		modal_type: "iframe",
 		//	function to set modal title, will be passed the event as a parameter
@@ -135,7 +135,7 @@ if(!String.prototype.formatNum) {
 
 		// ------------------------------------------------------------
 		// CALLBACKS. Events triggered by calendar class. You can use
-		// those to affect you UI
+		// those to affect your UI
 		// ------------------------------------------------------------
 		onAfterEventsLoad: function(events) {
 			// Inside this function 'this' is the calendar instance
