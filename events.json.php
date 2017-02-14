@@ -3,11 +3,11 @@
 	"result": [
 		{
 			"id": "293",
-			"title": "This is warning class event with very long title to check how it fits to evet in day view",
+			"title": "Just an example event.",
 			"url": "http://www.example.com/",
 			"class": "event-warning",
-			"start": "1362938400000",
-			"end":   "1363197686300"
+			"start": "1486703830740",
+			"end":   "1486880569811"
 		}
 	]
 }
