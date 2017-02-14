@@ -59,7 +59,7 @@ if(!String.prototype.formatNum) {
 		// Initial view (can be 'month', 'week', 'day')
 		view: 'month',
 		// Initial date. No matter month, week or day this will be a starting point. Can be 'now' or a date in format 'yyyy-mm-dd'
-		day: '2017-02-14',
+		day: 'now',
 		// Day Start time and end time with time intervals. Time split 10, 15 or 30.
 		time_start: '06:00',
 		time_end: '23:00',
@@ -161,7 +161,7 @@ if(!String.prototype.formatNum) {
 			year: '',
 			month: '',
 			week: '',
-			day: ''
+			day: '2017-02-14'
 		},
 		stop_cycling: false
 	};
