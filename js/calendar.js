@@ -838,7 +838,7 @@ if(!String.prototype.formatNum) {
 
 		if(this.options.day == 'now') {
 			var date = new Date();
-			year = date.getFullYear();
+			year = 2017;
 			month = date.getMonth();
 			day = date.getDate();
 		} else if(this.options.day.match(/^\d{4}-\d{2}-\d{2}$/g)) {
