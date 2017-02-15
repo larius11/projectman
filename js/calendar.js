@@ -783,7 +783,7 @@ if(!String.prototype.formatNum) {
 		}
 
 		this._init_position();
-		this.options.events_source: [
+		this.options.events_source= [
             {
                 "id": 293,
                 "title": "Event 1",
