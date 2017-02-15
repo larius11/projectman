@@ -27,7 +27,8 @@
 		if (!($event)){
 			$more = false;
 		}else{
-			$to_encode[$i] = $event;
+
+			$to_encode[$i] = array('id' => $event[0],'title' => $event[1],'url' => $event[2],'class' => $event[3],'start' => $event[4],'end' => $event[5]);
 			$i++;
 		}
 	}
