@@ -24,7 +24,6 @@
 	$more = true;
 	while($more) {
 		$event = mysql_fetch_row($result);
-		echo "This is the event: " . $event . "\n";
 		if (!($event)){
 			$more = false;
 		}else{
