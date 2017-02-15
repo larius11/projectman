@@ -783,30 +783,30 @@ if(!String.prototype.formatNum) {
 		}
 
 		this._init_position();
-		this.options.events_source= [
-            {
-                "id": 1,
-                "title": "Event 1",
-                "url": "http://example.com",
-                "class": "event-important",
-                "start": 1486403830740, // Milliseconds
-                "end": 1486780569811 // Milliseconds
-            },{
-                "id": 2,
-                "title": "Event 2",
-                "url": "http://example.com",
-                "class": "event-warning",
-                "start": 1486903830740, // Milliseconds
-                "end": 1486980569811 // Milliseconds
-            },{
-                "id": 3,
-                "title": "Event 3",
-                "url": "http://example.com",
-                "class": "event-info",
-                "start": 1487003830740, // Milliseconds
-                "end": 1487180563811 // Milliseconds
-            }
-        ];
+		// this.options.events_source= [
+  //           {
+  //               "id": 1,
+  //               "title": "Event 1",
+  //               "url": "http://example.com",
+  //               "class": "event-important",
+  //               "start": 1486403830740, // Milliseconds
+  //               "end": 1486780569811 // Milliseconds
+  //           },{
+  //               "id": 2,
+  //               "title": "Event 2",
+  //               "url": "http://example.com",
+  //               "class": "event-warning",
+  //               "start": 1486903830740, // Milliseconds
+  //               "end": 1486980569811 // Milliseconds
+  //           },{
+  //               "id": 3,
+  //               "title": "Event 3",
+  //               "url": "http://example.com",
+  //               "class": "event-info",
+  //               "start": 1487003830740, // Milliseconds
+  //               "end": 1487180563811 // Milliseconds
+  //           }
+  //       ];
 		this._loadEvents();
 		this._render();
 
