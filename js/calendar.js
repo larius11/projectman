@@ -842,7 +842,6 @@ if(!String.prototype.formatNum) {
 			year = date.getFullYear();
 			month = date.getMonth();
 			day = date.getDate();
-			window.alert(year +" "+ month+" "+day);
 		} else if(this.options.day.match(/^\d{4}-\d{2}-\d{2}$/g)) {
 			var list = this.options.day.split('-');
 			year = parseInt(list[0], 10);
