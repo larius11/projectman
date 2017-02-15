@@ -838,9 +838,10 @@ if(!String.prototype.formatNum) {
 
 		if(this.options.day == 'now') {
 			var date = new Date();
-			year = 2017;
-			month = 02;
-			day = 14;
+			year = date.getFullYear();
+			month = date.getMonth();
+			day = date.getDate();
+			window.alert(year +" "+ month+" "+day);
 		} else if(this.options.day.match(/^\d{4}-\d{2}-\d{2}$/g)) {
 			var list = this.options.day.split('-');
 			year = parseInt(list[0], 10);
