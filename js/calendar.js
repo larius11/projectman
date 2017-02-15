@@ -789,22 +789,22 @@ if(!String.prototype.formatNum) {
                 "title": "Event 1",
                 "url": "http://example.com",
                 "class": "event-important",
-                "start": 12039485678000, // Milliseconds
-                "end": 1234576967000 // Milliseconds
+                "start": 1486403830740, // Milliseconds
+                "end": 1486780569811 // Milliseconds
             },{
                 "id": 2,
                 "title": "Event 2",
                 "url": "http://example.com",
                 "class": "event-warning",
-                "start": 1486703830740, // Milliseconds
-                "end": 1486880569811 // Milliseconds
+                "start": 1486903830740, // Milliseconds
+                "end": 1486980569811 // Milliseconds
             },{
                 "id": 3,
                 "title": "Event 3",
                 "url": "http://example.com",
                 "class": "event-info",
-                "start": 13039485678000, // Milliseconds
-                "end": 1334576967000 // Milliseconds
+                "start": 1487003830740, // Milliseconds
+                "end": 1487180563811 // Milliseconds
             }
         ];
 		this._loadEvents();
