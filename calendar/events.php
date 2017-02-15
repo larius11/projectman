@@ -17,13 +17,13 @@
 		die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 	}
 
-	$result = mysqli_query("SELECT * FROM events_list");
+	$result = mysql_query("SELECT * FROM events_list");
 	$to_encode = array();
 	$i = 0;
 	$event = array();
 	$more = true;
 	while($more) {
-		$event = mysqli_fetch_row($result);
+		$event = mysql_fetch_row($result);
 		echo "This is the event: " . $event . "\n";
 		if (!($event)){
 			$more = false;
