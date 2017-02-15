@@ -397,7 +397,7 @@ if(!String.prototype.formatNum) {
 		this.context = context;
 
 		context.css('width', this.options.width).addClass('cal-context');
-
+		this._init_position();
 		this.view();
 		return this;
 	}
