@@ -785,13 +785,27 @@ if(!String.prototype.formatNum) {
 		this._init_position();
 		this.options.events_source= [
             {
-                "id": 293,
+                "id": 1,
                 "title": "Event 1",
                 "url": "http://example.com",
                 "class": "event-important",
                 "start": 12039485678000, // Milliseconds
                 "end": 1234576967000 // Milliseconds
-            },
+            },{
+                "id": 2,
+                "title": "Event 2",
+                "url": "http://example.com",
+                "class": "event-warning",
+                "start": 1486703830740, // Milliseconds
+                "end": 1486880569811 // Milliseconds
+            },{
+                "id": 3,
+                "title": "Event 3",
+                "url": "http://example.com",
+                "class": "event-info",
+                "start": 13039485678000, // Milliseconds
+                "end": 1334576967000 // Milliseconds
+            }
         ];
 		this._loadEvents();
 		this._render();
