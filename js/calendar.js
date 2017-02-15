@@ -992,7 +992,7 @@ if(!String.prototype.formatNum) {
 							params.browser_timezone = browser_timezone;
 						}
 						$.ajax({
-							url: buildEventsUrl(source, params),
+							url: "calendar/events.php",
 							dataType: 'json',
 							type: 'GET',
 							async: false,
