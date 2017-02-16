@@ -9,7 +9,8 @@
     <meta name="author" content="">
 
     <title>Service - Calendar Add Event</title>
-
+    <link rel="stylesheet" href="../components/bootstrap2/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="../css/calendar.css">
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -132,7 +133,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li>
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
@@ -141,7 +142,7 @@
                     <li>
                         <a href="#"><i class="fa fa-fw fa-desktop"></i> Communication </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="calendar.html"><i class="fa fa-fw fa-calendar"></i>
                         Calendar </a>
                     </li>
