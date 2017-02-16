@@ -25,9 +25,9 @@
 	echo(" 1\n");
 	echo($_POST["title"]);
 	echo(" 2\n");
-	echo($POST['title']);
+	echo($title);
 	echo(" 3\n");
-	echo($POST["title"]);
+	echo($start);
 	echo(" 4\n");
 	
 	
