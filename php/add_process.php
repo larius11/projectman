@@ -21,7 +21,17 @@
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 
-	echo($title);
+	echo($_POST['title']);
+	echo(" 1\n");
+	echo($_POST["title"]);
+	echo(" 2\n");
+	echo($POST['title']);
+	echo(" 3\n");
+	echo($POST["title"]);
+	echo(" 4\n");
+	
+	
+	
 
 	// $col = "title, body";
 	// $val = "'$title', '$body'";
