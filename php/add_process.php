@@ -21,7 +21,7 @@
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 
-	echo("Title: " . $title . "\nStart: " . $start . "\nEnd: " . $end);
+	echo($title);
 
 	// $col = "title, body";
 	// $val = "'$title', '$body'";
