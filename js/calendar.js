@@ -969,20 +969,17 @@ if(!String.prototype.formatNum) {
 		switch($.type(source)) {
 			case 'function':
 				loader = function() {
-					window.alert('Loading function');
 					return source(self.options.position.start, self.options.position.end, browser_timezone);
 				};
 				break;
 			case 'array':
 				loader = function() {
-					window.alert('Loading array');
 					return [].concat(source);
 				};
 				break;
 			case 'string':
 				if(source.length) {
 					loader = function() {
-						window.alert('Loading string');
 						var events = [];
 						var d_from = self.options.position.start;
 						var d_to = self.options.position.end;
@@ -1011,7 +1008,6 @@ if(!String.prototype.formatNum) {
 				break;
 		}
 		if(!loader) {
-			window.alert('Loading error');
 			$.error(this.locale.error_loadurl);
 		}
 		this.options.onBeforeEventsLoad.call(this, function() {
