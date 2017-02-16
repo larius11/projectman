@@ -17,7 +17,7 @@
 	// 	die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 	// }
 
-	$title = $_POST["title"];
+	$title = $_POST['title'];
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 
