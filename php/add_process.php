@@ -21,14 +21,12 @@
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 
-	echo($_POST['title']);
-	echo(" 1\n");
-	echo($_POST["title"]);
-	echo(" 2\n");
 	echo($title);
-	echo(" 3\n");
+	echo(" 1\n");
 	echo($start);
-	echo(" 4\n");
+	echo(" 2\n");
+	echo($end);
+	echo(" 2\n");
 	
 	
 	
