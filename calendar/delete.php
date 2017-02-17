@@ -25,13 +25,10 @@
 		if (!($event)){
 			$more = false;
 		}else{
-			$output = $output."option".$event[1]."/option<br>";
+			$output = $output."<option>".$event[1]."</option>";
 		}
 	}
-	echo($output);
+	include 'delete.html.php';
 
-	// $output = "<div id=\"box\"><div class=\"box-top\"> $title </div><div class=\"box-panel\">This is sort of working.</div></div>";
-	// include 'delete.html.php';
-
-	// mysql_close();
+	mysql_close();
 ?>
