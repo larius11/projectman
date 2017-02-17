@@ -16,19 +16,19 @@
 		die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 	}
 
-	$result = mysql_query("SELECT * FROM events_list");
-	$output = "";
-	$event = array();
-	$more = true;
-	while($more) {
-		$event = mysql_fetch_row($result);
-		if (!($event)){
-			$more = false;
-		}else{
-			$output = $output."<option> $event[1] </option>";
-		}
-	}
-	
+	// $result = mysql_query("SELECT * FROM events_list");
+	// $output = "";
+	// $event = array();
+	// $more = true;
+	// while($more) {
+	// 	$event = mysql_fetch_row($result);
+	// 	if (!($event)){
+	// 		$more = false;
+	// 	}else{
+	// 		$output = $output."<option> $event[1] </option>";
+	// 	}
+	// }
+	$output = "<p>Beginnings of our Dashboard</p>";
 	include 'delete.html.php';
 
 	mysql_close();
