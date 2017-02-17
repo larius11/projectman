@@ -29,7 +29,7 @@
 		}
 	}
 
-	$output = "<option>WHAT THE HECK</option>"
+	$output = "<option>WHAT THE HECK</option>";
 
 	include 'delete.html.php';
 
