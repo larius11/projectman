@@ -25,11 +25,13 @@
 		if (!($event)){
 			$more = false;
 		}else{
-			$output = $output."<option>".$event[1]."</option>";
+			$output = $output."<option>".$event[1]."</option><br>";
 		}
 	}
 
-	include 'delete.html.php';
+	echo($output);
 
-	mysql_close();
+	// include 'delete.html.php';
+
+	// mysql_close();
 ?>
