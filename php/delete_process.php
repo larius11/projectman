@@ -27,14 +27,6 @@
 		} 
 		$i++;
 	}
-
-
-	// $col = "ID, title, url, class, start, end";
-	// $val = "NULL, '$title', '$url', '$class', '$start', '$end'";
-
-	// $sql = "INSERT INTO  events_list ($col) VALUES ($val)";
-
-	
-
 	mysql_close();
+	header("Location: ../calendar.html");
  ?>
