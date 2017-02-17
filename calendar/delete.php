@@ -28,6 +28,9 @@
 			$output = $output."<option>".$event[1]."</option>";
 		}
 	}
+
+	$output = "<option>WHAT THE HECK</option>"
+
 	include 'delete.html.php';
 
 	mysql_close();
