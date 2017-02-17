@@ -25,7 +25,7 @@
 		if (!($event)){
 			$more = false;
 		}else{
-			$output = $output."<option> $event[1] </option>";
+			$output = $output."<option value=\"$event[0]\"> $event[1] </option>";
 		}
 	}
 	include 'delete.html.php';

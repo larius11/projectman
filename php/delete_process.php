@@ -21,7 +21,8 @@
 	$i = 0;
 	
 	while($event[$i]){
-		echo($event[$i]."<br>");
+		// $sql = "SELECT * FROM events_list WHERE title = '$event[$i]'";
+		echo($event[$i]."<br>"); 
 		$i++;
 	}
 
