@@ -193,9 +193,10 @@
                                 <form action="../php/delete_process.php" method="POST">
                                     <div class="col-lg-8">
                                         <label>Event:</label>
-                                        <select type="text" class="form-control" id="event" name="event">
-                                            <?php echo $output; ?>  
+                                        <select type="text" class="form-control" id="event" name="event">  
                                         </select>
+                                        
+                                            <?php echo $output; ?>
                                         <br>
                                         <button type="submit" class="btn btn-danger btn-lg" value="Submit">Delete</button>
                                     </div>
