@@ -21,8 +21,10 @@
 	$i = 0;
 	
 	while($event[$i]){
-		// $sql = "SELECT * FROM events_list WHERE title = '$event[$i]'";
-		echo($event[$i]."<br>"); 
+		$sql = "DELETE FROM events_list WHERE ID = '$event[$i]'";
+		if (!mysql_query($sql)){
+			die('Error: ' . mysql_error());
+		} 
 		$i++;
 	}
 
@@ -32,9 +34,7 @@
 
 	// $sql = "INSERT INTO  events_list ($col) VALUES ($val)";
 
-	// if (!mysql_query($sql)){
-	// 	die('Error: ' . mysql_error());
-	// }
+	
 
 	mysql_close();
  ?>
