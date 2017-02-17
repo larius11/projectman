@@ -29,8 +29,6 @@
 		}
 	}
 
-	$output = "<p>WHAT THE HECK</p>";
-
 	include 'delete.html.php';
 
 	mysql_close();

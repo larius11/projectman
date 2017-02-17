@@ -22,6 +22,8 @@
 
     <!-- Custom Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/general.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -195,7 +197,7 @@
                                         <label>Event:</label>
                                         <select type="text" class="form-control" id="event" name="event">  
                                         </select>
-                                        
+
                                             <?php echo $output; ?>
                                         <br>
                                         <button type="submit" class="btn btn-danger btn-lg" value="Submit">Delete</button>
