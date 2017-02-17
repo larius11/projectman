@@ -29,7 +29,7 @@
 	// 	}
 	// }
 
-	include 'delete.html.php';
+	include 'calendar/delete.html.php';
 
 	mysql_close();
 ?>
