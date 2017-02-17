@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <title>Service - Calendar Add Event</title>
-    <link rel="stylesheet" href="../components/bootstrap2/css/bootstrap-responsive.css">
+    <!-- <link rel="stylesheet" href="../components/bootstrap2/css/bootstrap-responsive.css"> -->
     <link rel="stylesheet" href="../css/calendar.css">
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -191,13 +191,13 @@
                             </div>
                             <div class="panel-body">
                                 <form action="../php/add_process.php" method="POST">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Title</label>
+                                            <label>Title:</label>
                                             <input type="text" class="form-control" placeholder="Enter text" id="title" name="title">
                                         </div>
                                         <div class="form-group">
-                                            <label>Priority</label>
+                                            <label>Priority:</label>
                                             <select type="text" class="form-control" id="class" name="class">
                                                 <option>Informative</option>
                                                 <option>Recurring</option>
@@ -206,16 +206,20 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label>Start Time</label>
-                                            <small>(yyyy-mm-dd)</small>
-                                            <input type="date" class="form-control" placeholder="Enter date yyyy-mm-dd" id="start" name="start">
+                                            <label>Start Time:</label>
+                                            <input type="datetime-local" step="900" class="form-control" id="start" name="start">
                                         </div>
                                         <div class="form-group">
-                                            <label>End Time</label>
-                                            <small>(yyyy-mm-dd)</small>
-                                            <input type="date" class="form-control" placeholder="Enter date yyyy-mm-dd" id="end" name="end">
+                                            <label>End Time:</label>
+                                            <input type="datetime-local" step="900" class="form-control" id="end" name="end">
                                         </div>
-                                        <button type="submit" class="btn btn-default" value="Submit">Submit</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Description:</label>
+                                            <textarea type="text" class="form-control" rows="12" id="url" name="url" style="resize: none;"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-lg" value="Submit" style="float: right;">Add</button>
                                     </div>
                                 </form>
                             </div>

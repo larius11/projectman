@@ -22,10 +22,36 @@
 	$class = $_POST['class'];
 	$start = $_POST['start'];
 	$end = $_POST['end'];
+	
+	$start = strtotime($start) * 1000;
+	$end = strtotime($end) * 1000;
+
+	if ($start == $end){
+		$end += 28800;
+	}else if ($start > $end){
+		$temp = $start;
+		$start = $end;
+		$end = $temp;
+	}
+
+	switch($class){    
+        case "Informative":
+            $class = "event-info";
+            break;
+        case "Recurring":
+            $class = "event-inverse";
+            break;
+        case "Special":
+            $class = "event-special";
+            break;
+        case "Important":
+            $class = "event-important";
+            break;
+    }
 
 	echo($title);
 	echo(" 1<br>");
-	echo($url);
+	echo($_POST['url']);
 	echo(" 2<br>");
 	echo($class);
 	echo(" 3<br>");	
@@ -34,9 +60,6 @@
 	echo($end);
 	echo(" 5<br>");
 
-	// if ($start == $end){
-	// 	$end += 28800000;
-	// }
 
 	// $col = "ID, title, url, class, start, end";
 	// $val = "NULL, '$title', '$url', '$class', '$start', '$end'";
