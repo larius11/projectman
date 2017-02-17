@@ -25,7 +25,7 @@
 		if (!($event)){
 			$more = false;
 		}else{
-			$output = "<option>".$event[1]."</option>";
+			$output = $output."option".$event[1]."/option<br>";
 		}
 	}
 	echo($output);
