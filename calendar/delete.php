@@ -17,8 +17,18 @@
 	}
 
 	$result = mysql_query("SELECT * FROM events_list");
-
-	echo($result);
+	$output = "";
+	$event = array();
+	$more = true;
+	while($more) {
+		$event = mysql_fetch_row($result);
+		if (!($event)){
+			$more = false;
+		}else{
+			$output = "<option>".$event[1]."</option>";
+		}
+	}
+	echo($output);
 
 	// $output = "<div id=\"box\"><div class=\"box-top\"> $title </div><div class=\"box-panel\">This is sort of working.</div></div>";
 	// include 'delete.html.php';
