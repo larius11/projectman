@@ -18,10 +18,12 @@
 	}
 
 	$event = $_POST['event'];
+	$i = 0;
 	
-	
-
-	var_dump($event);
+	while($event[$i]){
+		echo($event[$i]."<br>");
+		$i++;
+	}
 
 
 	// $col = "ID, title, url, class, start, end";
