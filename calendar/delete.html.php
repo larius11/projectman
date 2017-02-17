@@ -1,39 +1,48 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Service - Calendar</title>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<meta charset="UTF-8">
 
-	<link rel="stylesheet" href="components/bootstrap2/css/bootstrap-responsive.css">
-	<link rel="stylesheet" href="css/calendar.css">
-	<!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Service - Calendar Add Event</title>
+    <!-- <link rel="stylesheet" href="../components/bootstrap2/css/bootstrap-responsive.css"> -->
+    <link rel="stylesheet" href="../css/calendar.css">
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
 
-	<!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Morris Charts CSS -->
+    <link href="../css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-	<div id="wrapper">
-		<!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding-left: 15px;">
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="margin-right: 40px;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Service Admin</a>
+                <a class="navbar-brand" href="../index.html">Service Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -125,16 +134,16 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="../index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="tasks.html"><i class="fa fa-fw fa-bar-chart-o"></i> Tasks</a>
+                        <a href="../tasks.html"><i class="fa fa-fw fa-bar-chart-o"></i> Tasks</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-fw fa-desktop"></i> Communication </a>
                     </li>
                     <li class="active">
-                        <a href="calendar.html"><i class="fa fa-fw fa-calendar"></i>
+                        <a href="../calendar.html"><i class="fa fa-fw fa-calendar"></i>
                         Calendar </a>
                     </li>
                     <li>
@@ -152,86 +161,71 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-		<div id="page-wrapper">
+        <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Calendar <small>Add Event</small>
+                            Calendar <small>Delete Event</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="../index.html">Dashboard</a>
                             </li>
-                            <li class="active">
-                                <i class="fa fa-fw fa-calendar"></i> Calendar
+                            <li>
+                                <i class="fa fa-fw fa-calendar"></i><a href="../calendar.html"> Calendar</a>
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
-                <!-- Calendar Page Heading -->
-                <div class="page-header">
-                	<div class="pull-right form-inline">
-                        <div class="btn-group">
-                            <a href="calendar/add.html"><button class="btn btn-primary">Add</button></a>
-                            <a href="calendar/delete.html.php"><button class="btn btn-primary">Delete</button></a>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <i class="fa fa-fw fa-trash-o"></i>Delete Event Form
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <form action="../php/delete_process.php" method="POST">
+                                    <div class="col-lg-8">
+                                        <label>Event:</label>
+                                        <select type="text" class="form-control" id="event" name="event">
+                                              <?php echo $output; ?>  
+                                        </select>
+                                        <br>
+                                        <button type="submit" class="btn btn-danger btn-lg" value="Submit">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-						<div class="btn-group">
-							<button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
-							<button class="btn btn-primary" data-calendar-nav="today">Today</button>
-							<button class="btn btn-primary" data-calendar-nav="next">Next >></button>
-						</div>
-						<div class="btn-group">
-							<button class="btn btn-primary" data-calendar-view="year">Year</button>
-							<button class="btn btn-primary active" data-calendar-view="month">Month</button>
-							<button class="btn btn-primary" data-calendar-view="week">Week</button>
-							<button class="btn btn-primary" data-calendar-view="day">Day</button>
-						</div>
-					</div>
-					<h3></h3>
-					<small>All events in calendar and along the bottom of the page.</small>
-				</div>
+                    </div>
+                </div>
+                <!-- /.row -->
 
-				<div class="row" style="padding-left: 35px">
-					<div class="span9">
-						<div id="calendar"></div>
-					</div>
-					<div class="span3">
-						<h4>Events</h4>
-						<ul id="eventlist" class="nav nav-list"></ul>
-					</div>
-				</div>
+            </div>
+            <!-- /.container-fluid -->
 
-				<div class="clearfix"></div>
-				<br><br>
+        </div>
+        <!-- /#page-wrapper -->
 
-				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    <!-- /#wrapper -->
 
-				<div class="modal hide fade" id="events-modal">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h3>Event</h3>
-					</div>
-					<div class="modal-body" style="height: 400px">
-					</div>
-					<div class="modal-footer">
-						<a href="#" data-dismiss="modal" class="btn">Close</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="components/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="components/underscore/underscore-min.js"></script>
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
 
-		<!-- Bootstrap Core JavaScript -->
-    	<script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
 
-		<script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
-		<script type="text/javascript" src="js/calendar.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="../js/plugins/morris/raphael.min.js"></script>
+    <script src="../js/plugins/morris/morris.min.js"></script>
+    <script src="../js/plugins/morris/morris-data.js"></script>
 
-	</div>
 </body>
+
 </html>
