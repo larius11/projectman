@@ -21,7 +21,7 @@
 	
 	
 
-	echo($event);
+	var_dump($event);
 
 
 	// $col = "ID, title, url, class, start, end";

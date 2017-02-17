@@ -195,7 +195,7 @@
                                 <form action="../php/delete_process.php" method="POST">
                                     <div class="col-lg-8">
                                         <label>Event:</label>
-                                        <select type="text" multiple class="form-control" id="event" name="event">
+                                        <select type="text" multiple class="form-control" name="event[]">
                                             <?php echo ($output); ?>
                                         </select>
                                         <br>
