@@ -16,21 +16,19 @@
 		die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 	}
 
-	// $result = mysql_query("SELECT * FROM events_list");
-	// $output = "<p> Oh That's Cool </p>";
-	// $event = array();
-	// $more = true;
-	// while($more) {
-	// 	$event = mysql_fetch_row($result);
-	// 	if (!($event)){
-	// 		$more = false;
-	// 	}else{
-	// 		$output = $output."<option> $event[1] </option>";
-	// 	}
-	// }
-	$title = 'Well well well...';
-
-	$output = "<p>$title</p>";
+	$result = mysql_query("SELECT * FROM events_list");
+	$output = "";
+	$event = array();
+	$more = true;
+	while($more) {
+		$event = mysql_fetch_row($result);
+		if (!($event)){
+			$more = false;
+		}else{
+			$output = $output."<option> $event[1] </option>";
+		}
+	}
+	
 	include 'delete.html.php';
 
 	mysql_close();
