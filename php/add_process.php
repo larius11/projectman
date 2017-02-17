@@ -49,26 +49,26 @@
             break;
     }
 
-	echo($title);
-	echo(" 1<br>");
-	echo($_POST['url']);
-	echo(" 2<br>");
-	echo($class);
-	echo(" 3<br>");	
-	echo($start);
-	echo(" 4<br>");
-	echo($end);
-	echo(" 5<br>");
+	// echo($title);
+	// echo(" 1<br>");
+	// echo($_POST['url']);
+	// echo(" 2<br>");
+	// echo($class);
+	// echo(" 3<br>");	
+	// echo($start);
+	// echo(" 4<br>");
+	// echo($end);
+	// echo(" 5<br>");
 
 
-	// $col = "ID, title, url, class, start, end";
-	// $val = "NULL, '$title', '$url', '$class', '$start', '$end'";
+	$col = "ID, title, url, class, start, end";
+	$val = "NULL, '$title', '$url', '$class', '$start', '$end'";
 
-	// $sql = "INSERT INTO  events_list ($col) VALUES ($val)";
+	$sql = "INSERT INTO  events_list ($col) VALUES ($val)";
 
-	// if (!mysql_query($sql)){
-	// 	die('Error: ' . mysql_error());
-	// }
+	if (!mysql_query($sql)){
+		die('Error: ' . mysql_error());
+	}
 
-	// mysql_close();
+	mysql_close();
  ?>
