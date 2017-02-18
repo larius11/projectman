@@ -33,4 +33,5 @@
 		}
 	}
 	echo json_encode(array('success' => 1, 'result' => $to_encode));
+	header("Refresh:0");
  ?>
