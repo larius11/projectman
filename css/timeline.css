@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
+
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
@@ -109,13 +111,14 @@
 }
 
 .timeline-user {
+  font-family: 'Caveat Brush', cursive;
   float: right;
   color: rgb(52, 190, 218);
   width: 40%;
   background-color: rgba(149, 165, 166,0.7);
   line-height: normal;
   top: 19px;
-  font-size: 2.0em;
+  font-size: 3.0em;
   text-align: center;
   position: absolute;
   left: 53%;
@@ -123,13 +126,14 @@
 }
 
 .timeline-useri {
+  font-family: 'Caveat Brush', cursive;
   float: left;
   color: rgb(52, 190, 218);
   width: 40%;
   background-color: rgba(149, 165, 166,0.7);
   line-height: normal;
   top: 19px;
-  font-size: 2.0em;
+  font-size: 3.0em;
   text-align: center;
   position: absolute;
   left: 5%;
