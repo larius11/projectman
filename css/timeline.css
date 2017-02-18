@@ -28,6 +28,7 @@
 .timeline > li:after {
   content: " ";
   display: table;
+  
 }
 
 .timeline > li:after {
