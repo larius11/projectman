@@ -44,7 +44,7 @@
 }
 
 .timeline > li > .timeline-panel {
-  background-color: rgba(52, 152, 219,0.4);
+  background-color: rgba(232, 28, 28,0.4);
   width: 46%;
   float: left;
   border: 1px solid #d4d4d4;
@@ -73,8 +73,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid rgba(52, 152, 219,0.3);
-  border-right: 0 solid rgba(52, 152, 219,0.3);
+  border-left: 14px solid rgba(232, 28, 28,0.3);
+  border-right: 0 solid rgba(232, 28, 28,0.3);
   border-bottom: 14px solid transparent;
   content: " ";
 }
@@ -113,7 +113,7 @@
 .timeline-user {
   font-family: 'Caveat Brush', cursive;
   float: right;
-  color: rgb(52, 190, 218);
+  color: rgba(232, 28, 28,1.0);
   width: 40%;
   background-color: rgba(149, 165, 166,0.7);
   line-height: normal;
@@ -128,7 +128,7 @@
 .timeline-useri {
   font-family: 'Caveat Brush', cursive;
   float: left;
-  color: rgb(52, 190, 218);
+  color: rgba(232, 28, 28,1.0);
   width: 40%;
   background-color: rgba(149, 165, 166,0.7);
   line-height: normal;
