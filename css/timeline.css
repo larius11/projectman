@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700');
 
 .timeline {
@@ -28,7 +27,7 @@
 .timeline > li:after {
   content: " ";
   display: table;
-  
+
 }
 
 .timeline > li:after {
