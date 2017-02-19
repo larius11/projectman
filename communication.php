@@ -158,7 +158,7 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i> Dashboard
+                                <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-fw fa-desktop"></i> Communication

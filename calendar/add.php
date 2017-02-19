@@ -151,10 +151,10 @@
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="../index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="../index.php">Dashboard</a>
                             </li>
                             <li>
-                                <i class="fa fa-fw fa-calendar"></i><a href="../calendar.html"> Calendar</a>
+                                <i class="fa fa-fw fa-calendar"></i><a href="../calendar.php"> Calendar</a>
                             </li>
                         </ol>
                     </div>
