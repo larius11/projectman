@@ -138,7 +138,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <?php
-                        $active = "Dashboard";
+                        $active = "dash";
                         include 'php/nav.php';
                     ?>
                 </ul>
