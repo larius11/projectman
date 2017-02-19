@@ -137,7 +137,7 @@
                 <ul class="nav navbar-nav side-nav">
                     <?php
                         $active = "calendar";
-                        include 'php/nav.php';
+                        include '../php/nav.php';
                     ?>
                 </ul>
             </div>
