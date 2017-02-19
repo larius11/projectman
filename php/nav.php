@@ -1,4 +1,9 @@
 <?php
+
+    
+    echo "<p> This is the value passed: " . $active . "</p>";
+
+
     echo "<li class=\"active\">
         <a href=\"index.php\"><i class=\"fa fa-fw fa-dashboard\"></i> Dashboard</a>
     </li>
