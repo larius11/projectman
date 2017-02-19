@@ -59,5 +59,6 @@
 	}
 
 	mysql_close();
-	header("Location: ../calendar.html");
+	header("Refresh:0");
+	header("Location: ../calendar.php");
  ?>

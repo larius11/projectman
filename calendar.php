@@ -155,7 +155,7 @@
                 <div class="page-header">
                 	<div class="pull-right form-inline">
                         <div class="btn-group">
-                            <a href="calendar/add.html"><button class="btn btn-primary">Add</button></a>
+                            <a href="calendar/add.php"><button class="btn btn-primary">Add</button></a>
                             <a href="calendar/delete.php"><button class="btn btn-primary">Delete</button></a>
                         </div>
 						<div class="btn-group">

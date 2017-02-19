@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service - Calendar Add Event</title>
+    <title>Service - Calendar Delete Event</title>
     <!-- <link rel="stylesheet" href="../components/bootstrap2/css/bootstrap-responsive.css"> -->
     <link rel="stylesheet" href="../css/calendar.css">
     <!-- Bootstrap Core CSS -->
@@ -135,30 +135,10 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="../index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="../tasks.html"><i class="fa fa-fw fa-bar-chart-o"></i> Tasks</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-desktop"></i> Communication </a>
-                    </li>
-                    <li class="active">
-                        <a href="../calendar.html"><i class="fa fa-fw fa-calendar"></i>
-                        Calendar </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Account <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Messages</a>
-                            </li>
-                            <li>
-                                <a href="#">Embedded Chat</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <?php
+                        $active = "calendar";
+                        include 'php/nav.php';
+                    ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
