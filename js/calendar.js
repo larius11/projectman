@@ -934,27 +934,27 @@ if(!String.prototype.formatNum) {
 	Calendar.prototype._loadEvents = function() {
 		var self = this;
 		var source = null;
-		if('events_source' in this.options && this.options.events_source !== '') {
-			source = this.options.events_source;
-		}
-		else if('events_url' in this.options) {
-			source = this.options.events_url;
-			warn('The events_url option is DEPRECATED and it will be REMOVED in near future. Please use events_source instead.');
-		}
+		// if('events_source' in this.options && this.options.events_source !== '') {
+		// 	source = this.options.events_source;
+		// }
+		// else if('events_url' in this.options) {
+		// 	source = this.options.events_url;
+		// 	warn('The events_url option is DEPRECATED and it will be REMOVED in near future. Please use events_source instead.');
+		// }
 		var loader;
-		switch($.type(source)) {
-			case 'function':
-				loader = function() {
-					return source(self.options.position.start, self.options.position.end, browser_timezone);
-				};
-				break;
-			case 'array':
-				loader = function() {
-					return [].concat(source);
-				};
-				break;
-			case 'string':
-				if(source.length) {
+		// switch($.type(source)) {
+		// 	case 'function':
+		// 		loader = function() {
+		// 			return source(self.options.position.start, self.options.position.end, browser_timezone);
+		// 		};
+		// 		break;
+		// 	case 'array':
+		// 		loader = function() {
+		// 			return [].concat(source);
+		// 		};
+		// 		break;
+		// 	case 'string':
+		// 		if(source.length) {
 					loader = function() {
 						var events = [];
 						var d_from = self.options.position.start;
@@ -980,9 +980,9 @@ if(!String.prototype.formatNum) {
 						});
 						return events;
 					};
-				}
-				break;
-		}
+				// }
+				// break;
+		// }
 		if(!loader) {
 			$.error(this.locale.error_loadurl);
 		}
