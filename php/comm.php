@@ -49,7 +49,6 @@
                         </div>
                     </div>
                 </li>"
-				$i++;
 			}else{
 				$post[$i] = "
 				<li clas=\"timeline-inverted\">
@@ -69,10 +68,9 @@
                         </div>
                     </div>
                 </li>"
-				$i++;
 			}
+			echo $post[$i];
+			$i++;
 		}
 	}
-	var_dump($post);
-	header("Refresh:0");
  ?>
