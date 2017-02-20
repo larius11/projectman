@@ -20,13 +20,13 @@
 			die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 		}
 
-		$username = mysql_real_escape_string($_POST['user']);
-        $password = sha1($_POST['pass'] );
+		$username = $_POST['user'];
+        $password = $_POST['pass'];
 
         $query = mysql_query("SELECT * FROM users WHERE user='$username' AND pass='$password'");
-        $res = mysql_num_rows($query);
+        $row = mysql_fetch_array($result);
 
-        if ($res == 1) {
+		if (($row['user'] == $username) && ($row['pass'] == $password) ){
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
             $_SESSION['userobj'] = mysql_fetch_assoc($query);
@@ -35,7 +35,6 @@
             exit;
         } else {
             echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
-            header('Location: login.php');
         }
 	}else{	
 ?>
