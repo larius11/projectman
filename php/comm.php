@@ -35,29 +35,30 @@
 		}else{
 			//$elapsed = (strtotime($today)- strtotime($data[2]))/60;
 			$elapsed = 35;
-			if ($i%2 == 0){
-				$post[$i] = "<li><div class=\"timeline-badge\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i></div><div class=\"timeline-user\">".$data[1]."</div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\">".$data[3]."</h4><p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>".$elapsed." minutes ago</small></p></div><div class=\"timeline-body\"><p>".$data[4]."</p></div></div></li>"
-			}else{
-				$post[$i] = "
-				<li clas=\"timeline-inverted\">
-                    <div class=\"timeline-badge\">
-                        <i class=\"fa fa-user\" aria-hidden=\"true\"></i>
-                    </div>
-                    <div class=\"timeline-useri\">
-                            ". $data[1] . "
-                    </div>
-                    <div class=\"timeline-panel\">
-                        <div class=\"timeline-heading\">
-                            <h4 class=\"timeline-title\">".$data[3]."</h4>
-                            <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>".$elapsed." minutes ago</small></p>
-                        </div>
-                        <div class=\"timeline-body\">
-                            <p>".$data[4]."</p>
-                        </div>
-                    </div>
-                </li>"
-			}
-			echo $post[$i];
+			var_dump ($data);
+			// if ($i%2 == 0){
+			// 	$post[$i] = "<li><div class=\"timeline-badge\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i></div><div class=\"timeline-user\">".$data[1]."</div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\">".$data[3]."</h4><p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>".$elapsed." minutes ago</small></p></div><div class=\"timeline-body\"><p>".$data[4]."</p></div></div></li>"
+			// }else{
+			// 	$post[$i] = "
+			// 	<li clas=\"timeline-inverted\">
+   //                  <div class=\"timeline-badge\">
+   //                      <i class=\"fa fa-user\" aria-hidden=\"true\"></i>
+   //                  </div>
+   //                  <div class=\"timeline-useri\">
+   //                          ". $data[1] . "
+   //                  </div>
+   //                  <div class=\"timeline-panel\">
+   //                      <div class=\"timeline-heading\">
+   //                          <h4 class=\"timeline-title\">".$data[3]."</h4>
+   //                          <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>".$elapsed." minutes ago</small></p>
+   //                      </div>
+   //                      <div class=\"timeline-body\">
+   //                          <p>".$data[4]."</p>
+   //                      </div>
+   //                  </div>
+   //              </li>"
+			// }
+			// echo $post[$i];
 			$i++;
 		}
 	}
