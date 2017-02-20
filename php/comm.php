@@ -24,8 +24,10 @@
 	$post = array();
 	$i = 0;
 	$more = true;
+	echo "<p>Im about to begin!!</p>";
 	while($more) {
 		$data = mysql_fetch_row($result);
+		
 		if (!($data)){
 			$more = false;
 		}else{
