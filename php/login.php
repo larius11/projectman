@@ -1,5 +1,6 @@
 <?php	
 	session_start();
+		echo "<p>I'm starting</p>";
 
 	if (isSet($_POST['login'])){
 		echo "<p>I'm working!!!!!!!!!!</p>";
@@ -37,6 +38,7 @@
             echo 'Data does not match <br /> RE-Enter Username and Password';
         }
 	}else{
+		echo "<p>I'm spinning</p>";		
 ?>
 
 <html lang="en">
