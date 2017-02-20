@@ -27,11 +27,11 @@
         echo "</p><p>Pass: ".$password."</p>";
 
         $query = mysql_query("SELECT * FROM users WHERE user = '$username' AND pass = '$password'");
-        $row = mysql_fetch_array($result);
+        $row = mysql_fetch_row($result);
 
         var_dump($row); 	
 
-		if (($row['user'] == $username) && ($row['pass'] == $password) ){
+		if (($row[1] == $username) && ($row[2] == $password) ){
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
             $_SESSION['userobj'] = mysql_fetch_assoc($query);
