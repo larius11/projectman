@@ -2,7 +2,7 @@
 	session_start();
 		echo "<p>I'm starting</p>";
 
-	if (isSet($_POST['login'])){
+	if (isSet($_POST['user'])){
 		echo "<p>I'm working!!!!!!!!!!</p>";
 		define('DB_NAME','service');
 		define('DB_USER','heb');
@@ -68,7 +68,7 @@
 		<div class="modal-dialog">
 			<div class="loginmodal-container">
 				<h1>Login to Your Account</h1><br>
-				<form>
+				<form action="" method="POST">
 					<input type="text" name="user" placeholder="Username">
 					<input type="password" name="pass" placeholder="Password">
 					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
