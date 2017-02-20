@@ -93,6 +93,8 @@
     <link href="../css/sb-admin.css" rel="stylesheet">
 
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
 </head>
 <body>
