@@ -1,7 +1,8 @@
 <?php	
 	session_start();
 
-	// if (isSet($_POST['login']){
+	if (isset($_POST['login']){
+		echo "Im working...";
 	// 	define('DB_NAME','service');
 	// 	define('DB_USER','heb');
 	// 	define('DB_PASSWORD','Austin04');
@@ -73,7 +74,6 @@
 // 	</div>
 // </body>
 // </html>";
-	if (false){
 	}else{
 ?>
 
