@@ -17,7 +17,7 @@
 		die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 	}
 
-	$result = mysql_query("SELECT * FROM comm_list");
+	$result = mysql_query("SELECT * FROM comm_list ORDER BY comm_list.time ASC");
 	date_default_timezone_set('America/Chicago');
 	$today=date("Y-m-d h:i:sa", strtotime("now"));
 	$data = array();
