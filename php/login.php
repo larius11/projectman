@@ -26,6 +26,8 @@
         $query = mysql_query("SELECT * FROM users WHERE user='$username' AND pass='$password'");
         $row = mysql_fetch_array($result);
 
+        var_dump($row);
+
 		if (($row['user'] == $username) && ($row['pass'] == $password) ){
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
