@@ -16,17 +16,17 @@
 	if (!$db_selected){
 		die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 	}
-	
+
 	echo "<p>Im about to begin!!</p>";
 
-	// $result = mysql_query("SELECT * FROM comm_list");
+	$result = mysql_query("SELECT * FROM comm_list");
 	// date_default_timezone_set('America/Chicago');
-	// $today=date("Y-m-d h:i:sa", strtotime("now"));
-	// $data = array();
-	// $post = array();
-	// $i = 0;
-	// $more = true;
-	// echo "<p>Im about to begin!!</p>";
+	$today=date("Y-m-d h:i:sa", strtotime("now"));
+	$data = array();
+	$post = array();
+	$i = 0;
+	$more = true;
+	echo "<p>Im about to end.</p>";
 	// while($more) {
 	// 	$data = mysql_fetch_row($result);
 
