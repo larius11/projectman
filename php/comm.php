@@ -38,6 +38,7 @@
 				$time = $elapsed . " seconds ago";
 			}else{
 				$elapsed = $elapsed/60;
+				echo $elapsed;
 			}
 			if ($elapsed < 60){
 				$elapsed = floor($elapsed);
