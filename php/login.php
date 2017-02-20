@@ -1,7 +1,8 @@
 <?php	
 	session_start();
 
-	if (isSet($_POST['user'])){
+	if (isSet($_POST['login'])){
+		echo "<p>I'm working...</p>"
 		define('DB_NAME','service');
 		define('DB_USER','heb');
 		define('DB_PASSWORD','Austin04');
@@ -19,25 +20,21 @@
 			die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
 		}
 
-		// Get values passed from the login-form in login.php file
-		$username = $_POST['user'];
-		$password = $_POST['pass'];
+		$username = mysql_real_escape_string($_POST['user']);
+        $password = sha1($_POST['pass'] );
 
-		// Still need to prevent mysql injection, need check the input eventually
+        $query = mysql_query("SELECT * FROM users WHERE user='$username' AND pass='$password'");
+        $res = mysql_num_rows($query);
 
-		// connect to the server's database
-		mysql_connect("localhost", "root", "richiboy1");
-		mysql_select_db("login");
+        if ($res == 1) {
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            $_SESSION['userobj'] = mysql_fetch_assoc($query);
 
-		// Query the database for user
-		$result = mysql_query("select * from users where user = '$username' and pass = '$password'") or die("Failed to query database ".mysql_error());
-		$row = mysql_fetch_array($result);
-
-        if (($row['user'] == $username) && ($row['pass'] == $password) ){
-			header("Location: ../index.php");
-			exit;
+            header('Location: ../index.php');
+            exit;
         } else {
-            echo 'Data does not match <br /> RE-Enter Username and Password';
+            echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
             header('Location: login.php');
         }
 	}else{	
