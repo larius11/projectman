@@ -1,7 +1,7 @@
 <?php	
 	session_start();
 
-	if (isset($_POST['login']){
+	if (isset($_POST['login'])){
 		echo "Im working...";
 	// 	define('DB_NAME','service');
 	// 	define('DB_USER','heb');
