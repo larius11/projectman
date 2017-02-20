@@ -5,6 +5,8 @@
 	define('DB_PASSWORD','Austin04');
 	define('DB_HOST', 'localhost');
 
+	echo "Entering php...<br>";
+
 	$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
 	if (!$link) {
@@ -27,7 +29,7 @@
 	echo "<p>Im about to begin!!</p>";
 	while($more) {
 		$data = mysql_fetch_row($result);
-		
+
 		if (!($data)){
 			$more = false;
 		}else{
