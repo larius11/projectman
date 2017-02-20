@@ -1,7 +1,7 @@
 <?php	
-	//session_start();
+	session_start();
 
-	// if (isSet($_POST['login']){
+	if (isSet($_POST['login']){
 	// 	define('DB_NAME','service');
 	// 	define('DB_USER','heb');
 	// 	define('DB_PASSWORD','Austin04');
@@ -73,8 +73,8 @@
 // 	</div>
 // </body>
 // </html>";
-// }
-//?>
+	}else{
+?>
 
 <html lang="en">
 <head>
@@ -116,3 +116,8 @@
 	</div>
 </body>
 </html>
+<?php
+
+}
+
+?>
