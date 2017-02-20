@@ -29,6 +29,7 @@
 		$data = mysql_fetch_row($result);
 
 		if (!($data)){
+			$i--;
 			$more = false;
 		}else{
 			$elapsed = (strtotime($today)- strtotime($data[2]));
@@ -80,7 +81,7 @@
                     <div class=\"timeline-panel\">
                         <div class=\"timeline-heading\">
                             <h4 class=\"timeline-title\">".$data[3]."</h4>
-                            <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>".$time." minutes ago</small></p>
+                            <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>".$time."</small></p>
                         </div>
                         <div class=\"timeline-body\">
                             <p>".$data[4]."</p>
@@ -88,8 +89,11 @@
                     </div>
                 </li>";
 			}
-			echo $post[$i];
 			$i++;
 		}
+	}
+	while($i>=0){
+		echo $post[$i];
+		$i--;
 	}
  ?>
