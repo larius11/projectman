@@ -1,7 +1,7 @@
 <?php	
 	session_start();
 
-	if (isset($_POST['login'])){
+	if (isSet($_POST['login'])){
 		define('DB_NAME','service');
 		define('DB_USER','heb');
 		define('DB_PASSWORD','Austin04');
@@ -69,7 +69,7 @@
 					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 				</form>
 				<div class="login-help">
-					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+					<a href="#">Forgot Password</a>
 				</div>
 			</div>
 		</div>
