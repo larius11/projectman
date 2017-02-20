@@ -23,10 +23,13 @@
 		$username = $_POST['user'];
         $password = $_POST['pass'];
 
-        $query = mysql_query("SELECT * FROM users WHERE user='$username' AND pass='$password'");
+        echo "<p>User: ".$username;
+        echo "</p><p>Pass: ".$password."</p>";
+
+        $query = mysql_query("SELECT * FROM users WHERE user = '$username' AND pass = '$password'");
         $row = mysql_fetch_array($result);
 
-        var_dump($row);
+        var_dump($row); 	
 
 		if (($row['user'] == $username) && ($row['pass'] == $password) ){
             $_SESSION['username'] = $username;
