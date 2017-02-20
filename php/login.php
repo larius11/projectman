@@ -1,9 +1,7 @@
 <?php	
 	session_start();
-		echo "<p>I'm starting</p>";
 
 	if (isSet($_POST['user'])){
-		echo "<p>I'm working!!!!!!!!!!</p>";
 		define('DB_NAME','service');
 		define('DB_USER','heb');
 		define('DB_PASSWORD','Austin04');
@@ -24,7 +22,7 @@
 		$username = mysql_real_escape_string($_POST['user']);
         $password = sha1($_POST['pass'] );
 
-        $query = mysql_query("SELECT * FROM tab WHERE user='".addSlashes($username)."' AND pass='".addSlashes($password)."'");
+        $query = mysql_query("SELECT * FROM users WHERE user='".addSlashes($username)."' AND pass='".addSlashes($password)."'");
         $res = mysql_num_rows($query);
 
         if ($res == 1) {
@@ -36,9 +34,9 @@
             exit;
         } else {
             echo 'Data does not match <br /> RE-Enter Username and Password';
+            header('Location: login.php');
         }
-	}else{
-		echo "<p>I'm spinning</p>";		
+	}else{	
 ?>
 
 <html lang="en">
