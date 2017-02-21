@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service Admin Website</title>
+    <title>Service Admin Website - Communication</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -94,40 +94,13 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $_SESSION['username']; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Messages</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -185,14 +158,14 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <form role="form">
+                        <form action="../php/post_process.php" method="POST">
                             <div class="form-group">
                                 <label>Title:</label>
-                                <input class="form-control" placeholder="Enter text" style="width: 80%;">
+                                <input type="text" class="form-control" placeholder="Enter text" name="title" style="width: 80%;">
                             </div>
                             <div class="form-group">
                                 <label>Body:</label>
-                                <textarea type="text" class="form-control" rows="6" style="width: 80%; resize: none;"></textarea>
+                                <textarea type="text" class="form-control" rows="6" name="body" style="width: 80%; resize: none;"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg" value="Submit">Post</button>
                         </form>
