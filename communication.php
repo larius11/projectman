@@ -167,7 +167,7 @@
                                 <label>Body:</label>
                                 <textarea type="text" class="form-control" rows="6" name="body" style="width: 80%; resize: none;"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg" value="Submit">Post</button>
+                            <button type="submit" class="btn btn-heb btn-lg" value="Submit">Post</button>
                         </form>
                     </div>
                 </div>
