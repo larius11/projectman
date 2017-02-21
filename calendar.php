@@ -159,16 +159,16 @@
                 <!-- Calendar Page Heading -->
                 <div class="page-header">
                 	<div class="pull-right form-inline">
-                        <div class="btn-group">
+                        <div class="btn-group" style="padding-bottom: 5px;">
                             <button class="btn btn-success"><a href="calendar/add.php">Add</a></button>
                             <button class="btn btn-heb"><a href="calendar/delete.php">Delete</a></button>
                         </div>
-						<div class="btn-group">
+						<div class="btn-group" style="padding-bottom: 5px;">
 							<button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
 							<button class="btn btn-primary" data-calendar-nav="today">Today</button>
 							<button class="btn btn-primary" data-calendar-nav="next">Next >></button>
 						</div>
-						<div class="btn-group">
+						<div class="btn-group" style="padding-bottom: 5px;">
 							<button class="btn btn-primary" data-calendar-view="year">Year</button>
 							<button class="btn btn-primary active" data-calendar-view="month">Month</button>
 							<button class="btn btn-primary" data-calendar-view="week">Week</button>
