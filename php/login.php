@@ -65,21 +65,33 @@
 
 </head>
 <body>
-    <a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Login &raquo;</a>
-	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-		<div class="modal-dialog">
-			<div class="loginmodal-container">
-				<h1>Login to Your Account</h1><br>
-				<form action="" method="POST">
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-				</form>
-				<div class="login-help">
-					<a href="#">Forgot Password</a>
+	<div id="page-wrapper">
+	<div class="container-fluid">
+	<div class="row">
+	<div class="col-lg-2 col-md-2">
+	</div>
+	<div class="col-lg-8 col-md-8">
+	    <a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Login &raquo;</a>
+		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+					<form action="" method="POST">
+						<input type="text" name="user" placeholder="Username">
+						<input type="password" name="pass" placeholder="Password">
+						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+					</form>
+					<div class="login-help">
+						<a href="#">Forgot Password</a>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="col-lg-2 col-md-2">
+	</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>
