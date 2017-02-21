@@ -68,16 +68,12 @@
 
 </head>
 <body>
-<div id="wrapper">
-	<div id="page-wrapper">
             <div class="container-fluid">
-                <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
-                    	<img src="../img/heb.png" style="height: 10%; padding-left: 43%;">
+                    	<img class="center-block" src="../img/heb.png" style="height: 75px;">
+                    	<br>
                     </div>
-                </div>
-                <div class="row">
 					<div class="col-lg-12 col-md-12">
 						<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block;">
 							<div class="modal-dialog">
@@ -97,8 +93,6 @@
 					</div>
 				</div>
 			</div>
-	</div>
-</div>
 </body>
 </html>
 <?php
