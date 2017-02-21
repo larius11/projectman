@@ -68,24 +68,37 @@
 
 </head>
 <body>
-	<div class="col-lg-12 col-md-12">
-		<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block;">
-			<div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login - Front End</h1><br>
-					<form action="" method="POST">
-						<input type="text" name="user" placeholder="Username">
-						<input type="password" name="pass" placeholder="Password">
-						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-					</form>
-					<!-- <div class="login-help">
-						<a href="#">Forgot Password</a>
-					</div> -->
+<div id="wrapper">
+	<div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                    	<img src="../img/heb.png" style="height: 10%; padding-left: 43%;">
+                    </div>
+                </div>
+                <div class="row">
+					<div class="col-lg-12 col-md-12">
+						<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block;">
+							<div class="modal-dialog">
+								<div class="loginmodal-container">
+									<h1>Login - Front End</h1><br>
+									<form action="" method="POST">
+										<input type="text" name="user" placeholder="Username">
+										<input type="password" name="pass" placeholder="Password">
+										<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+									</form>
+									<!-- <div class="login-help">
+										<a href="#">Forgot Password</a>
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 	</div>
-	<footer><img src="../img/heb.png"></footer>
+</div>
 </body>
 </html>
 <?php
