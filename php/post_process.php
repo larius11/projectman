@@ -20,7 +20,7 @@
 		}
 
 		date_default_timezone_set('America/Chicago');
-		$time =date("Y-m-d h:i:sa", strtotime("now")); 
+		$time =date("Y-m-d H:i:s", strtotime("now")); 
 
 		$user = $_SESSION['username'];
 		$title = $_POST['title'];

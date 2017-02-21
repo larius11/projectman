@@ -19,7 +19,7 @@
 
 	$result = mysql_query("SELECT * FROM comm_list ORDER BY comm_list.time ASC");
 	date_default_timezone_set('America/Chicago');
-	$today=date("Y-m-d h:i:sa", strtotime("now"));
+	$today=date("Y-m-d H:i:s", strtotime("now"));
 	$data = array();
 	$post = array();
 	$time = "";
