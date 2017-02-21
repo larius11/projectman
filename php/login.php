@@ -68,12 +68,10 @@
 
 </head>
 <body>
-	<div id="page-wrapper">
-	<div class="container-fluid">
 	<div class="row">
 	<div class="col-lg-2 col-md-2">
 	</div>
-	<div class="col-lg-8 col-md-8">
+	<div class="col-lg-8 col-md-8" style="left: 30%;">
 	    <a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Login &raquo;</a>
 		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 			<div class="modal-dialog">
@@ -92,8 +90,6 @@
 		</div>
 	</div>
 	<div class="col-lg-2 col-md-2">
-	</div>
-	</div>
 	</div>
 	</div>
 </body>
