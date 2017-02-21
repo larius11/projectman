@@ -174,7 +174,7 @@
                                 </h3>
                             </div>
                             <div class="panel-body">
-                                <form action="php/add_process.php" method="POST">
+                                <form action="../php/add_process.php" method="POST">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Title:</label>

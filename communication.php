@@ -158,7 +158,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <form action="../php/post_process.php" method="POST">
+                        <form action="php/post_process.php" method="POST">
                             <div class="form-group">
                                 <label>Title:</label>
                                 <input type="text" class="form-control" placeholder="Enter text" name="title" style="width: 80%;">
