@@ -160,8 +160,8 @@
                 <div class="page-header">
                 	<div class="pull-right form-inline">
                         <div class="btn-group">
-                            <a href="calendar/add.php"><button class="btn btn-primary">Add</button></a>
-                            <a href="calendar/delete.php"><button class="btn btn-primary">Delete</button></a>
+                            <button class="btn btn-success"><a href="calendar/add.php">Add</a></button>
+                            <button class="btn btn-heb"><a href="calendar/delete.php">Delete</a></button>
                         </div>
 						<div class="btn-group">
 							<button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
