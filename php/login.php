@@ -30,6 +30,9 @@
 			if ($username == "riveronr"){
 				$username = " Ricardo Riveron";
 			}
+			if ($username == "m01225"){
+				$username = " Antonio Martinez";
+			}
 
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
