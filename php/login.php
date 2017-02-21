@@ -55,7 +55,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service Admin Website</title>
+    <title>Service Admin Website - Login</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/login.css" rel="stylesheet">
@@ -68,29 +68,22 @@
 
 </head>
 <body>
-	<div class="row">
-	<div class="col-lg-2 col-md-2">
-	</div>
-	<div class="col-lg-8 col-md-8" style="left: 30%;">
-	    <a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Login &raquo;</a>
-		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	<div class="col-lg-12 col-md-12">
+		<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: block;">
 			<div class="modal-dialog">
 				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
+					<h1>Login - Front End</h1><br>
 					<form action="" method="POST">
 						<input type="text" name="user" placeholder="Username">
 						<input type="password" name="pass" placeholder="Password">
 						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
 					</form>
-					<div class="login-help">
+					<!-- <div class="login-help">
 						<a href="#">Forgot Password</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="col-lg-2 col-md-2">
-	</div>
 	</div>
 </body>
 </html>
