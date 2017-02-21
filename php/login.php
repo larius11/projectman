@@ -28,7 +28,7 @@
 
 		if (($row['user'] == $username) && ($row['pass'] == $password) ){
 			if ($username == "riveronr"){
-				$username = "Ricardo Riveron";
+				$username = " Ricardo Riveron";
 			}
 
             $_SESSION['username'] = $username;
