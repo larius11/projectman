@@ -65,7 +65,7 @@
 
 </head>
 <body>
-    <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+    <a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Login &raquo;</a>
 	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 		<div class="modal-dialog">
 			<div class="loginmodal-container">
