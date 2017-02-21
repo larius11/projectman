@@ -6,7 +6,7 @@
 	define('DB_HOST', 'localhost');
 	session_start();
 
-	if(isset($_POST['title'],$_POST['body'],$_SESSION['username'])){
+	if(!empty($_POST['title'],$_POST['body'])){
 		$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
 		if (!$link) {
