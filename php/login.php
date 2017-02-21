@@ -85,6 +85,7 @@
 			</div>
 		</div>
 	</div>
+	<footer><img src="../img/heb.png"></footer>
 </body>
 </html>
 <?php
