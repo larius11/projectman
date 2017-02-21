@@ -30,7 +30,7 @@
 			if ($username == "riveronr"){
 				$username = " Ricardo Riveron";
 			}
-			if ($username == "m01225"){
+			if ($username == "m6484830"){
 				$username = " Antonio Martinez";
 			}
 
