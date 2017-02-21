@@ -68,26 +68,9 @@
 			}
 
 			if ($i%2 == 0){
-				$post[$i] = "<li><div class=\"timeline-badge\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i></div><div class=\"timeline-user\">$data[1]</div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\">$data[3]</h4><p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>$time</small></p></div><div class=\"timeline-body\"><p>$data[4]</p></div></div></li>";
+				$post[$i] = "<li><div class=\"timeline-badge\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\">$data[3]</h4><p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> $time</small></p></div><div class=\"timeline-body\"><p> $data[4]</p><p style=\"color: rgb(52,190,218);\"><small style=\"color: black;\">- by </small>$data[1]</p></div></div></li>";
 			}else{
-				$post[$i] = "
-				<li class=\"timeline-inverted\">
-                    <div class=\"timeline-badge\">
-                        <i class=\"fa fa-user\" aria-hidden=\"true\"></i>
-                    </div>
-                    <div class=\"timeline-useri\">
-                            ". $data[1] . "
-                    </div>
-                    <div class=\"timeline-panel\">
-                        <div class=\"timeline-heading\">
-                            <h4 class=\"timeline-title\">".$data[3]."</h4>
-                            <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i>".$time."</small></p>
-                        </div>
-                        <div class=\"timeline-body\">
-                            <p>".$data[4]."</p>
-                        </div>
-                    </div>
-                </li>";
+				$post[$i] = "<li class=\"timeline-inverted\"><div class=\"timeline-badge\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\">$data[3]</h4><p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> $time</small></p></div><div class=\"timeline-body\"><p> $data[4]</p><p style=\"color: rgb(52,190,218);\"><small style=\"color: black;\">- by </small>$data[1]</p></div></div></li>";
 			}
 			$i++;
 		}
