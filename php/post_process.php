@@ -41,7 +41,7 @@
 		header("Refresh:0");
 		header("Location: ../communication.php");
 	}else{
-		echo "Missing Arguments!!!"
+		echo "Missing Arguments!!!";
 		header("Location: ../communication.php");
 	}
  ?>
