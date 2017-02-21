@@ -27,6 +27,10 @@
         $row = mysql_fetch_array($query);
 
 		if (($row['user'] == $username) && ($row['pass'] == $password) ){
+			if ($username == "riveronr"){
+				$username = "Ricardo Riveron";
+			}
+
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
             $_SESSION['userobj'] = mysql_fetch_assoc($query);
