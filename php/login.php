@@ -13,14 +13,8 @@
         $one = $username;
         $two = $password;
         $stmt->execute();
-        if($result = $stmt->get_result()){
-        	echo "<p>Working</p>";
-        }else{
-        	echo "<p>Bullshit</p>";
-        }
+        // $result = $stmt->get_result();
         // $rowNum = $result->num_rows;
-
-        // var_dump($result);
    //      if($rowNum > 0){
 			// if ($row = $result->fetch_assoc()){
 			// 	if ($username == "riveronr"){
