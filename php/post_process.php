@@ -27,9 +27,9 @@
 
 		// $result = $stmt->get_result();
 
-		if (!mysqli_query($db_conx, $sql)){
-			die('Error: ' . mysqli_error());
-		}
+		// if (!mysqli_query($db_conx, $sql)){
+		// 	die('Error: ' . mysqli_error());
+		// }
 
 		mysqli_close();
 		header("Refresh:0");
