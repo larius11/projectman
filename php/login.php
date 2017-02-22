@@ -7,13 +7,12 @@
 		$username = mysqli_real_escape_string($db_conx, $_POST['user']);
         $password = mysqli_real_escape_string($db_conx, $_POST['pass']);
 
+        $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=? AND pass=?");
+        $stmt->bind_param("ss", $one, $two);
+
+        $one = $username;
+        $two = $password;
         echo "<p>Username = $username</p><p>Password = $password</p>";
-
-   //      $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=? AND pass=?");
-   //      $stmt->bind_param("ss", $one, $two);
-
-   //      $one = $username;
-   //      $two = $password;
    //      $stmt->execute();
    //      $result = $stmt->get_result();
    //      $rowNum = $result->num_rows;
