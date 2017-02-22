@@ -12,10 +12,11 @@
 
         $one = $username;
         $two = $password;
-        echo "<p>Username = $username</p><p>Password = $password</p>";
-   //      $stmt->execute();
-   //      $result = $stmt->get_result();
-   //      $rowNum = $result->num_rows;
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $rowNum = $result->num_rows;
+
+        echo "<p>Rows = $rowNum</p><p>Username = $one</p><p>Password = $two</p>";
 
    //      if($rowNum > 0){
 			// if ($row = $result->fetch_assoc()){
