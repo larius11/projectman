@@ -7,39 +7,48 @@
 	session_start();
 
 	if(!empty($_POST['title']) && !empty($_POST['body'])){
-		$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
-		if (!$link) {
-			die('Could not connect: ' . mysql_error());
+		// $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+
+		// if (!$link) {
+		// 	die('Could not connect: ' . mysql_error());
+		// }
+
+		// $db_selected = mysql_select_db(DB_NAME, $link);
+
+		// if (!$db_selected){
+		// 	die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
+		// }
+		
+		$db_conx = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+		if (mysqli_connect_errno()){
+			echo mysqli_connect_error();
+			exit();
+		}else{
+
+			date_default_timezone_set('America/Chicago');
+			$time =date("Y-m-d H:i:s", strtotime("now")); 
+
+			$user = mysqli_real_escape_string($db_conx, $_SESSION['username']);
+			$title = mysqli_real_escape_string($db_conx, $_POST['title']);
+			$body = mysqli_real_escape_string($db_conx, $_POST['body']);
+
+
+
+			$col = "ID, user, time, title, body";
+			$val = "NULL, '$user', '$time', '$title', '$body'";
+
+			$sql = "INSERT INTO  comm_list ($col) VALUES ($val)";
+
+			if (!mysqli_query($db_conx, $sql)){
+				die('Error: ' . mysql_error());
+			}
+
+			mysqli_close();
+			header("Refresh:0");
+			header("Location: ../communication.php");
 		}
-
-		$db_selected = mysql_select_db(DB_NAME, $link);
-
-		if (!$db_selected){
-			die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
-		}
-
-		date_default_timezone_set('America/Chicago');
-		$time =date("Y-m-d H:i:s", strtotime("now")); 
-
-		$user = $_SESSION['username'];
-		$title = $_POST['title'];
-		$body = $_POST['body'];
-
-
-
-		$col = "ID, user, time, title, body";
-		$val = "NULL, '$user', '$time', '$title', '$body'";
-
-		$sql = "INSERT INTO  comm_list ($col) VALUES ($val)";
-
-		if (!mysql_query($sql)){
-			die('Error: ' . mysql_error());
-		}
-
-		mysql_close();
-		header("Refresh:0");
-		header("Location: ../communication.php");
 	}else{
 		echo "Missing Arguments!!!";
 		header("Location: ../communication.php");
