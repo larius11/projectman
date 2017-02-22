@@ -1,5 +1,4 @@
 <?php
-
     // Switch statement to choose diff active pages
     switch ($active){
         case "dash":

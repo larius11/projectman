@@ -1,46 +1,38 @@
 <?php	
-	session_start();
 
 	if (isSet($_POST['user'])){
-		echo "<p>I'm working...</p>";
-		define('DB_NAME','service');
-		define('DB_USER','heb');
-		define('DB_PASSWORD','Austin04');
-		define('DB_HOST', 'localhost');
 
-		$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+		include 'db_service.php';
+		session_start();
 
-		if (!$link) {
-			die('Could not connect: ' . mysql_error());
-		}
+		$username = mysqli_real_escape_string($db_conx, $_POST['user']);
+        $password = mysqli_real_escape_string($db_conx, $_POST['pass']);
 
-		$db_selected = mysql_select_db(DB_NAME, $link);
+        $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=? AND pass=?");
+        $stmt->bind_param("ss", $user, $pass);
 
-		if (!$db_selected){
-			die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
-		}
+        $user = $username;
+        $pass = $password;
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $rowNum = $result->num_rows;
 
-		$username = $_POST['user'];
-        $password = $_POST['pass'];
+        if($rowNum > 0){
+			if ($row = $result->fetch_assoc()){
+				if ($username == "riveronr"){
+					$username = " Ricardo Riveron";
+				}
+				if ($username == "m6484830"){
+					$username = " Antonio Martinez";
+				}
 
-        $query = mysql_query("SELECT * FROM users WHERE user='$username' AND pass='$password'");
-        $row = mysql_fetch_array($query);
+	            $_SESSION['username'] = $username;
+	            $_SESSION['password'] = $password;
 
-		if (($row['user'] == $username) && ($row['pass'] == $password) ){
-			if ($username == "riveronr"){
-				$username = " Ricardo Riveron";
-			}
-			if ($username == "m6484830"){
-				$username = " Antonio Martinez";
-			}
-
-            $_SESSION['username'] = $username;
-            $_SESSION['password'] = $password;
-            $_SESSION['userobj'] = mysql_fetch_assoc($query);
-
-            header('Location: ../index.php');
-            exit;
-        } else {
+	            header('Location: ../index.php');
+	            exit;
+	        }
+	    }else{
             echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
         }
 	}else{	
