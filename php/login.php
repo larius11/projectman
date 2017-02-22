@@ -13,11 +13,10 @@
         $one = $username;
         $two = $password;
         $stmt->execute();
-        // $result = $stmt->get_result();
+        $result = $stmt->get_result();
         // $rowNum = $result->num_rows;
 
-        echo "<p>Username = $one</p><p>Password = $two</p>";
-
+        var_dump($result);
    //      if($rowNum > 0){
 			// if ($row = $result->fetch_assoc()){
 			// 	if ($username == "riveronr"){
