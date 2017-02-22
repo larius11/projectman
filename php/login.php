@@ -13,6 +13,7 @@
         $one = $username;
         $two = $password;
         $stmt->execute();
+        echo "<p>Username = $one</p><p>Password = $two</p>";
         // $result = $stmt->get_result();
         // $rowNum = $result->num_rows;
    //      if($rowNum > 0){
