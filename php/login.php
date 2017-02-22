@@ -16,7 +16,7 @@
         $result = $stmt->get_result();
         // $rowNum = $result->num_rows;
 
-        var_dump($result);
+        // var_dump($result);
    //      if($rowNum > 0){
 			// if ($row = $result->fetch_assoc()){
 			// 	if ($username == "riveronr"){
