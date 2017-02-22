@@ -18,6 +18,15 @@
 
 		$sql = "INSERT INTO  comm_list ($col) VALUES ($val)";
 
+		$stmt = $conn->prepare("INSERT INTO  comm_list ( ? ) VALUES ( ? )");
+		$stmt->bind_param("ss", $column, $values);
+
+		$column = $col;
+		$values = $val;
+		$stmt->execute();
+
+		// $result = $stmt->get_result();
+
 		if (!mysqli_query($db_conx, $sql)){
 			die('Error: ' . mysqli_error());
 		}
