@@ -13,7 +13,11 @@
         $one = $username;
         $two = $password;
         $stmt->execute();
-        $result = $stmt->get_result();
+        if($result = $stmt->get_result()){
+        	echo "<p>Working</p>";
+        }else{
+        	echo "<p>Bullshit</p>";
+        }
         // $rowNum = $result->num_rows;
 
         // var_dump($result);
