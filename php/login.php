@@ -16,7 +16,7 @@
         $stmt->execute();
         $result = $stmt->get_result();
         $rowNum = $result->num_rows;
-
+        echo "About to check the thang..."
         if($rowNum > 0){
 			if ($row = $result->fetch_assoc()){
 				if ($username == "riveronr"){

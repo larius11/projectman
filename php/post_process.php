@@ -1,7 +1,4 @@
 <?php 
-
-	
-
 	if(!empty($_POST['title']) && !empty($_POST['body'])){
 
 		include 'db_service.php';
