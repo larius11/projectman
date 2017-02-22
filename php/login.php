@@ -13,10 +13,10 @@
         $one = $username;
         $two = $password;
         $stmt->execute();
-        $result = $stmt->get_result();
-        $rowNum = $result->num_rows;
+        // $result = $stmt->get_result();
+        // $rowNum = $result->num_rows;
 
-        echo "<p>Rows = $rowNum</p><p>Username = $one</p><p>Password = $two</p>";
+        echo "<p>Username = $one</p><p>Password = $two</p>";
 
    //      if($rowNum > 0){
 			// if ($row = $result->fetch_assoc()){
