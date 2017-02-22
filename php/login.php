@@ -7,34 +7,36 @@
 		$username = mysqli_real_escape_string($db_conx, $_POST['user']);
         $password = mysqli_real_escape_string($db_conx, $_POST['pass']);
 
-        $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=? AND pass=?");
-        $stmt->bind_param("ss", $one, $two);
+        echo "<p>Username = $username</p><p>Password = $password</p>"
 
-        $one = $username;
-        $two = $password;
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $rowNum = $result->num_rows;
-        
-        if($rowNum > 0){
-			if ($row = $result->fetch_assoc()){
-				if ($username == "riveronr"){
-					$username = " Ricardo Riveron";
-				}
-				if ($username == "m6484830"){
-					$username = " Antonio Martinez";
-				}
+   //      $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=? AND pass=?");
+   //      $stmt->bind_param("ss", $one, $two);
 
-	            $_SESSION['username'] = $username;
-	            $_SESSION['password'] = $password;
-	            mysqli_close();
-				header("Refresh:0");
-	            header('Location: ../index.php');
-	            exit;
-	        }
-	    }else{
-            echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
-        }
+   //      $one = $username;
+   //      $two = $password;
+   //      $stmt->execute();
+   //      $result = $stmt->get_result();
+   //      $rowNum = $result->num_rows;
+
+   //      if($rowNum > 0){
+			// if ($row = $result->fetch_assoc()){
+			// 	if ($username == "riveronr"){
+			// 		$username = " Ricardo Riveron";
+			// 	}
+			// 	if ($username == "m6484830"){
+			// 		$username = " Antonio Martinez";
+			// 	}
+
+	  //           $_SESSION['username'] = $username;
+	  //           $_SESSION['password'] = $password;
+	  //           mysqli_close();
+			// 	header("Refresh:0");
+	  //           header('Location: ../index.php');
+	  //           exit;
+	  //       }
+	  //   }else{
+   //          echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
+   //      }
 	}else{	
 ?>
 
