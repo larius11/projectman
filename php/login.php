@@ -1,5 +1,4 @@
 <?php	
-
 	if (isSet($_POST['user'])){
 
 		include 'db_service.php';
@@ -9,14 +8,14 @@
         $password = mysqli_real_escape_string($db_conx, $_POST['pass']);
 
         $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=? AND pass=?");
-        $stmt->bind_param("ss", $user, $pass);
+        $stmt->bind_param("ss", $one, $two);
 
-        $user = $username;
-        $pass = $password;
+        $one = $username;
+        $two = $password;
         $stmt->execute();
         $result = $stmt->get_result();
         $rowNum = $result->num_rows;
-        echo "About to check the thang..."
+        
         if($rowNum > 0){
 			if ($row = $result->fetch_assoc()){
 				if ($username == "riveronr"){
@@ -28,7 +27,8 @@
 
 	            $_SESSION['username'] = $username;
 	            $_SESSION['password'] = $password;
-
+	            mysqli_close();
+				header("Refresh:0");
 	            header('Location: ../index.php');
 	            exit;
 	        }
