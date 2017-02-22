@@ -18,7 +18,7 @@
 
 		// $sql = "INSERT INTO  comm_list ($col) VALUES ($val)";
 
-		$stmt = $conn->prepare("INSERT INTO  comm_list ($col) VALUES (NULL, ?, '$time', ?, ?)");
+		$stmt = $db_conx->prepare("INSERT INTO  comm_list ($col) VALUES (NULL, ?, '$time', ?, ?)");
 		$stmt->bind_param("sss", $username, $titlei, $bodyi);
 
 		$username = $user;
