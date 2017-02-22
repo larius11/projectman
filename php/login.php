@@ -13,28 +13,27 @@
         $one = $username;
         $two = $password;
         $stmt->execute();
-        echo "<p>Username = $one</p><p>Password = $two</p>";
-        // $result = $stmt->get_result();
-        // $rowNum = $result->num_rows;
-   //      if($rowNum > 0){
-			// if ($row = $result->fetch_assoc()){
-			// 	if ($username == "riveronr"){
-			// 		$username = " Ricardo Riveron";
-			// 	}
-			// 	if ($username == "m6484830"){
-			// 		$username = " Antonio Martinez";
-			// 	}
+        $result = $stmt->get_result();
+        $rowNum = $result->num_rows;
+        if($rowNum > 0){
+			if ($row = $result->fetch_assoc()){
+				if ($username == "riveronr"){
+					$username = " Ricardo Riveron";
+				}
+				if ($username == "m6484830"){
+					$username = " Antonio Martinez";
+				}
 
-	  //           $_SESSION['username'] = $username;
-	  //           $_SESSION['password'] = $password;
-	  //           mysqli_close();
-			// 	header("Refresh:0");
-	  //           header('Location: ../index.php');
-	  //           exit;
-	  //       }
-	  //   }else{
-   //          echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
-   //      }
+	            $_SESSION['username'] = $username;
+	            $_SESSION['password'] = $password;
+	            mysqli_close();
+				header("Refresh:0");
+	            header('Location: ../index.php');
+	            exit;
+	        }
+	    }else{
+            echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
+        }
 	}else{	
 ?>
 
