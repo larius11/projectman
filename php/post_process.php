@@ -14,15 +14,16 @@
 		$body = mysqli_real_escape_string($db_conx, $_POST['body']);
 
 		$col = "ID, user, time, title, body";
-		$val = "NULL, '$user', '$time', '$title', '$body'";
+		// $val = "NULL, '$user', '$time', '$title', '$body'";
 
-		$sql = "INSERT INTO  comm_list ($col) VALUES ($val)";
+		// $sql = "INSERT INTO  comm_list ($col) VALUES ($val)";
 
-		$stmt = $conn->prepare("INSERT INTO  comm_list ( ? ) VALUES ( ? )");
-		$stmt->bind_param("ss", $column, $values);
+		$stmt = $conn->prepare("INSERT INTO  comm_list ($col) VALUES (NULL, ?, '$time', ?, ?)");
+		$stmt->bind_param("sss", $username, $titlei, $bodyi);
 
-		$column = $col;
-		$values = $val;
+		$username = $user;
+		$titlei = $title;
+		$bodyi = $body;
 		$stmt->execute();
 
 		// $result = $stmt->get_result();
