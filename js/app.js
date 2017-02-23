@@ -4,6 +4,8 @@
 
 	var options = {
 		events_source: '../php/events.php',
+		modal: "#events-modal",
+		modal_type: "iframe",
 		view: 'month',
 		tmpl_path: 'tmpls/',
 		tmpl_cache: false,

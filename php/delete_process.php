@@ -1,33 +1,20 @@
 <?php 
 
-	define('DB_NAME','service');
-	define('DB_USER','heb');
-	define('DB_PASSWORD','Austin04');
-	define('DB_HOST', 'localhost');
-
-	$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-
-	if (!$link) {
-		die('Could not connect: ' . mysql_error());
-	}
-
-	$db_selected = mysql_select_db(DB_NAME, $link);
-
-	if (!$db_selected){
-		die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
-	}
+	include 'db_service.php';
 
 	$event = $_POST['event'];
 	$i = 0;
+	$begin = '../calendar/details/modal';
+	$finish = '.html';
+	$stmt = $db_conx->prepare("DELETE FROM events_list WHERE ID = '$event[$i]'");
 	
 	while($event[$i]){
-		$sql = "DELETE FROM events_list WHERE ID = '$event[$i]'";
-		if (!mysql_query($sql)){
-			die('Error: ' . mysql_error());
-		} 
+		$url = $begin.$event[$i].$finish;
+		unlink($url);
+		$stmt->execute();
 		$i++;
 	}
-	mysql_close();
+	mysqli_close();
 	header("Refresh:0");
 	header("Location: ../calendar.php");
  ?>

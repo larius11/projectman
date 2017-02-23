@@ -104,7 +104,7 @@ if(!String.prototype.formatNum) {
 			}
 		},
 		// ID of the element of modal window. If set, events URLs will be opened in modal windows.
-		modal: 0,
+		modal: "#events-modal",
 		//	modal handling setting, one of "iframe", "ajax" or "template"
 		modal_type: "iframe",
 		//	function to set modal title, will be passed the event as a parameter
@@ -240,13 +240,13 @@ if(!String.prototype.formatNum) {
 		ms10: 'Nov',
 		ms11: 'Dec',
 
-		d0: 'Sunday',
-		d1: 'Monday',
-		d2: 'Tuesday',
-		d3: 'Wednesday',
-		d4: 'Thursday',
-		d5: 'Friday',
-		d6: 'Saturday'
+		d0: 'Su',
+		d1: 'M',
+		d2: 'T',
+		d3: 'W',
+		d4: 'Th',
+		d5: 'F',
+		d6: 'S'
 	};
 
 	var browser_timezone = '';

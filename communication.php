@@ -9,7 +9,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -150,7 +150,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="panel panel-default" style="background-image: url('img/comm_back.png'); overflow: auto;">
-                            <ul class="timeline" style="height: 600px; float:left; width: 100%;">
+                            <ul class="timeline" style="height: 300px; float:left; width: 100%;">
                                 <?php
                                     include 'php/comm.php';
                                 ?>

@@ -6,17 +6,6 @@
   position: relative;
 }
 
-.timeline:before {
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  content: " ";
-  width: 3px;
-  background-color: #eeeeee;
-  left: 50%;
-  margin-left: -1.5px;
-}
-
 .timeline > li {
   margin-bottom: 20px;
   position: relative;
@@ -46,7 +35,7 @@
 
 .timeline > li > .timeline-panel {
   background-color: rgba(232, 28, 28,0.4);
-  width: 46%;
+  width: 92%; 
   float: left;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
@@ -67,7 +56,6 @@
   top: 16px;
   left: 50%;
   margin-left: -25px;
-  /*background-color: #999999;*/
   z-index: 100;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;

@@ -1,34 +1,24 @@
 <?php 
 
-	define('DB_NAME','service');
-	define('DB_USER','heb');
-	define('DB_PASSWORD','Austin04');
-	define('DB_HOST', 'localhost');
+	include '../php/db_service.php';
 
-	$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+	$stmt = $db_conx->prepare("SELECT * FROM events_list");
+	$stmt->execute();
+	$result = $stmt->get_result();
 
-	if (!$link) {
-		die('Could not connect: ' . mysql_error());
-	}
-
-	$db_selected = mysql_select_db(DB_NAME, $link);
-
-	if (!$db_selected){
-		die('Can\'t use ' . DB_NAME . ': ' . mysql_error());
-	}
-
-	$result = mysql_query("SELECT * FROM events_list");
 	$to_encode = array();
 	$i = 0;
+	$begin = 'calendar/details/modal';
+	$end = '.html';
 	$event = array();
 	$more = true;
 	while($more) {
-		$event = mysql_fetch_row($result);
+		$event = mysqli_fetch_row($result);
 		if (!($event)){
 			$more = false;
 		}else{
-
-			$to_encode[$i] = array('id' => $event[0],'title' => $event[1],'url' => $event[2],'class' => $event[3],'start' => $event[4],'end' => $event[5]);
+			$url = $begin.$event[0].$end;
+			$to_encode[$i] = array('id' => $event[0],'title' => $event[1],'url' => $url,'class' => $event[3],'start' => $event[4],'end' => $event[5]);
 			$i++;
 		}
 	}

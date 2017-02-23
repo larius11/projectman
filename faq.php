@@ -94,40 +94,13 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $_SESSION['username']; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Messages</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -174,60 +147,167 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h1 class="panel-title">How-To's</h1>
-                            </div>
-                            <div class="panel-body">
-                                <h4>Print lane report:</h4>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Key</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>'Manager'</td>
-                                        <td>Pops up manager menu</td>
-                                    </tr>
-                                    <tr>
-                                        <td>'3'</td>
-                                        <td>Enters Reports Interface</td>
-                                    </tr>
-                                    <tr>
-                                        <td>'F5'</td>
-                                        <td>Mode Switch</td>
-                                    </tr>
-                                    <tr>
-                                        <td>'F5'</td>
-                                        <td>Enters Lane Interface</td>
-                                    </tr>
-                                    <tr>
-                                        <td>'3'</td>
-                                        <td>Seeks Cashiers Information</td>
-                                    </tr>
-                                    <tr>
-                                        <td>'1'</td>
-                                        <td>Prints Lane Report</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                            </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="alert alert-warning">
+                            <strong>Note:</strong> All instructions assume you're logged in as Manager at the scan mode screen.
                         </div>
                     </div>
-                    <div class="col-md-2">
-                    </div>
-
                 </div>
 
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Important Phone Numbers</h1>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Phone Number</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Store</td>
+                                                <td>(512)-502-8445</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Help Desk</td>
+                                                <td>(210)-938-8464</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Lock/Unlock Register</h1>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Key</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>'Manager'</td>
+                                                <td>Pops up manager menu</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'6'</td>
+                                                <td>Manager Lock/Unlock</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Print Active Lane Report</h1>
+                            </div>
+                            <div class="panel-body">
+                                <h4></h4>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Key</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>'Manager'</td>
+                                                <td>Pops up manager menu</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'3'</td>
+                                                <td>Cash Control Functions</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'F5'</td>
+                                                <td>Mode Switch</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'F5'</td>
+                                                <td>Enters Manager Interface</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'3'</td>
+                                                <td>Settlement Correction Menu</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'6'</td>
+                                                <td>Prints Active Lane Report</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Partner Cashier #</h1>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Key</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>'Manager'</td>
+                                                <td>Pops up manager menu</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'3'</td>
+                                                <td>Cash Control Functions</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'3'</td>
+                                                <td>Checker Reports Menu</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'1'</td>
+                                                <td>Till Reports Menu</td>
+                                            </tr>
+                                            <tr>
+                                                <td>'6'</td>
+                                                <td>Checker Status - All</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- /#page-wrapper -->
 

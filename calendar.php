@@ -81,40 +81,13 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $_SESSION['username']; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Messages</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -176,12 +149,12 @@
 						</div>
 					</div>
 					<h3></h3>
-					<small>All events in calendar and along the bottom of the page.</small>
+					<small>All events in calendar and along the side/bottom of the page.</small>
 				</div>
 
-				<div class="row" style="padding-left: 35px">
+				<div class="row">
 					<div class="span6">
-						<div id="calendar"></div>
+						<div id="calendar"  style="padding-left: 35px; padding-right: 5px;"></div>
 					</div>
 					<div class="span3">
 						<h4>Events</h4>
@@ -194,17 +167,20 @@
 
 				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-				<div class="modal hide fade" id="events-modal">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h3>Event</h3>
-					</div>
-					<div class="modal-body" style="height: 400px">
-					</div>
-					<div class="modal-footer">
-						<a href="#" data-dismiss="modal" class="btn">Close</a>
-					</div>
-				</div>
+				<div class="modal fade" id="events-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: rgba(192, 57, 43,0.7);">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body" style="height: 400px;background-color: rgba(127, 140, 141,1.0);">
+                            </div>
+                            <div class="modal-footer" style="background-color: rgba(236, 240, 241,1.0);">
+                                <a href="#" data-dismiss="modal" class="btn">Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 		<script type="text/javascript" src="components/jquery/jquery.min.js"></script>

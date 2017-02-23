@@ -16,17 +16,6 @@
                 </li>
                 <li>
                     <a href=\"faq.php\"><i class=\"fa fa-fw fa-book\"></i>Pam's Notebook</a>
-                </li>
-                <li>
-                    <a href=\"javascript:;\" data-toggle=\"collapse\" data-target=\"#demo\"><i class=\"fa fa-fw fa-arrows-v\"></i> Account <i class=\"fa fa-fw fa-caret-down\"></i></a>
-                    <ul id=\"demo\" class=\"collapse\">
-                        <li>
-                                <a href=\"#\">Messages</a>
-                        </li>
-                        <li>
-                                <a href=\"#\">Embedded Chat</a>
-                        </li>
-                    </ul>
                 </li>";
             break;
         case "task":
@@ -44,17 +33,6 @@
                 </li>
                 <li>
                     <a href=\"faq.php\"><i class=\"fa fa-fw fa-book\"></i>Pam's Notebook</a>
-                </li>
-                <li>
-                    <a href=\"javascript:;\" data-toggle=\"collapse\" data-target=\"#demo\"><i class=\"fa fa-fw fa-arrows-v\"></i> Account <i class=\"fa fa-fw fa-caret-down\"></i></a>
-                    <ul id=\"demo\" class=\"collapse\">
-                        <li>
-                                <a href=\"#\">Messages</a>
-                        </li>
-                        <li>
-                                <a href=\"#\">Embedded Chat</a>
-                        </li>
-                    </ul>
                 </li>";
             break;
         case "comm":
@@ -72,17 +50,6 @@
                 </li>
                 <li>
                     <a href=\"faq.php\"><i class=\"fa fa-fw fa-book\"></i>Pam's Notebook</a>
-                </li>
-                <li>
-                    <a href=\"javascript:;\" data-toggle=\"collapse\" data-target=\"#demo\"><i class=\"fa fa-fw fa-arrows-v\"></i> Account <i class=\"fa fa-fw fa-caret-down\"></i></a>
-                    <ul id=\"demo\" class=\"collapse\">
-                        <li>
-                                <a href=\"#\">Messages</a>
-                        </li>
-                        <li>
-                                <a href=\"#\">Embedded Chat</a>
-                        </li>
-                    </ul>
                 </li>";
             break;
         case "calendar":
@@ -100,17 +67,6 @@
                 </li>
                 <li>
                     <a href=\"http://www.ricardoriveron.com/projectman/faq.php\"><i class=\"fa fa-fw fa-book\"></i>Pam's Notebook</a>
-                </li>
-                <li>
-                    <a href=\"javascript:;\" data-toggle=\"collapse\" data-target=\"#demo\"><i class=\"fa fa-fw fa-arrows-v\"></i> Account <i class=\"fa fa-fw fa-caret-down\"></i></a>
-                    <ul id=\"demo\" class=\"collapse\">
-                        <li>
-                                <a href=\"#\">Messages</a>
-                        </li>
-                        <li>
-                                <a href=\"#\">Embedded Chat</a>
-                        </li>
-                    </ul>
                 </li>";
             break;
         case "pam":
@@ -128,17 +84,6 @@
                 </li>
                 <li class=\"active\">
                     <a href=\"faq.php\"><i class=\"fa fa-fw fa-book\"></i>Pam's Notebook</a>
-                </li>
-                <li>
-                    <a href=\"javascript:;\" data-toggle=\"collapse\" data-target=\"#demo\"><i class=\"fa fa-fw fa-arrows-v\"></i> Account <i class=\"fa fa-fw fa-caret-down\"></i></a>
-                    <ul id=\"demo\" class=\"collapse\">
-                        <li>
-                                <a href=\"#\">Messages</a>
-                        </li>
-                        <li>
-                                <a href=\"#\">Embedded Chat</a>
-                        </li>
-                    </ul>
                 </li>";
             break;
     }
