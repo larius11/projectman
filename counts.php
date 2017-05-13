@@ -1,24 +1,23 @@
 <?php
     session_start();
     if(!isset($_SESSION['username'])){
-        $_SESSION['location'] = 'Location: ../tasks.php';
+        $_SESSION['location'] = 'Location: ../counts.php';
         header("Location:php/login.php");
     }
 ?>
 <html lang="en">
 <head>
 
-    <meta charset="utf-8">
+    <meta charset=utf-8 />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service - Tasks</title>
+    <title>Service - Counts On Me</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="icon" href="img/heb.ico">
 
     <!-- Custom CSS -->
@@ -30,19 +29,23 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- Morris Charts JavaScript -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+
+    <!-- Bootstrap CSS for timeline -->
+    <link href="css/timeline.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -74,7 +77,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <?php
-                        $active = "task";
+                        $active = "dash";
                         include 'php/nav.php';
                     ?>
                 </ul>
@@ -90,53 +93,75 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Tasks <small>Front End Tasks</small>
+                            Dashboard <small>Counts On Me</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-desktop"></i> Tasks
+                                <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <?php 
-                    if ($_SESSION['clearance']>=1){
-                ?>
-                <!-- Task Page Heading  -->
-                <div class="page-header">
-                        <button type="submit" class="btn btn-primary btn-lg"><a href="tasks/add.php" style="color: #fff;">Assign Task</a></button>
-                        <button type="submit" class="btn btn-heb btn-lg"><a href="tasks/delete.php" style="color: #fff;">Remove Task</a></button>
-                </div>
-                <?php
-                    }
-                ?>
-
-                <!-- Main Task Panel -->
-                <div class="row" style="background-color: #eee;">
-                    <div class="jumbotron">
-                        <h1>Hello, <?php echo $_SESSION['username']; ?>!</h1>
-                        <h3>These are your assigned tasks:</h3>
-                        <div class="col-sm-6">
-                            <div class="list-group">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Current Status</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-xs-12">
+                                    <?php include 'charts/counts_chart.php'; ?>
+                                    <div id="counts-chart2" style="height: 300px;"></div>
+                                    <script type="application/javascript">
+                                        Morris.Donut({
+                                          element: 'counts-chart2',
+                                          data: <?php echo json_encode($json_data)?>,
+                                          backgroundColor: '#ccc',
+                                          labelColor: '#000',
+                                          resize: true,
+                                          colors: ['#34495e','#3498db']
+                                          }).select(0);
+                                    </script>
+                                </div>
                                 <?php
-                                    include 'php/tasklist_process.php';
+                                    if ($_SESSION['clearance']>=3){
+                                ?>
+                                <div class="col-xs-offset-4 col-xs-4 col-md-offset-5 col-md-4">
+                                    <form action="counts/php/reset.php" method="get">
+                                        <button type="submit" class="btn btn-heb btn-lg" value="Submit"><strong>Reset!</strong></button>
+                                    </form>
+                                </div>
+                                <?php
+                                    }
                                 ?>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
+                    <div class="col-lg-4">
+	                    <form action="counts/update.php" method="POST">
+	                    	<div class="panel panel-default">
+	                            <div class="panel-heading">
+	                                <h3 class="panel-title">Remaining Partners</h3>
+	                            </div>
+	                            <div class="panel-body" style="overflow: auto;">
+	                            	<div class="form-group">
+	                            		<ul class="timeline" style="height: 50%; padding-top: 0px;">
+		                                	<?php
+	                                			include 'php/db_service.php';
+	                                			include 'counts/list.php';
+	                                		?>
+			                            </ul>
+	                            	</div>
+	                            </div>
+	                        </div>
+							<button type="submit" class="btn btn-heb btn-lg" value="Submit">Update</button>
+                        </form>
+                    </div>
                 </div>
+                <!-- /.row -->
 
-                <div class="page-header">
-                    <h1>Progress</h1>
-                </div>
-                <?php  
-                    include 'php/task_process.php';
-                ?>
             </div>
             <!-- /.container-fluid -->
 
@@ -151,10 +176,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Task Updater -->
-    <script src="js/task_progress.js"></script>
-
 
 </body>
 

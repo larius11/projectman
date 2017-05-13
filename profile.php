@@ -1,11 +1,12 @@
 <?php
     session_start();
     if(!isset($_SESSION['username'])){
-        $_SESSION['location'] = 'Location: ../tasks.php';
+        $_SESSION['location'] = 'Location: ../faq.php';
         header("Location:php/login.php");
     }
 ?>
 <html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -14,11 +15,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service - Tasks</title>
+    <title>Service - Profile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="icon" href="img/heb.ico">
 
     <!-- Custom CSS -->
@@ -74,7 +74,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <?php
-                        $active = "task";
+                        $active = "dash";
                         include 'php/nav.php';
                     ?>
                 </ul>
@@ -90,56 +90,79 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Tasks <small>Front End Tasks</small>
+                            Dashboard <small>Profile</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-desktop"></i> Tasks
+                                <i class="fa fa-user" aria-hidden="true"></i> Profile
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <?php 
-                    if ($_SESSION['clearance']>=1){
-                ?>
-                <!-- Task Page Heading  -->
-                <div class="page-header">
-                        <button type="submit" class="btn btn-primary btn-lg"><a href="tasks/add.php" style="color: #fff;">Assign Task</a></button>
-                        <button type="submit" class="btn btn-heb btn-lg"><a href="tasks/delete.php" style="color: #fff;">Remove Task</a></button>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="alert alert-warning">
+                            <strong>Disclaimer:</strong> All passwords used on this server are encrypted with a hash function! Once set it can only be reset through this site. If you forget your password it must be retrieved by the admin for security reasons.
+                        </div>
+                    </div>
                 </div>
-                <?php
-                    }
-                ?>
-
-                <!-- Main Task Panel -->
-                <div class="row" style="background-color: #eee;">
-                    <div class="jumbotron">
-                        <h1>Hello, <?php echo $_SESSION['username']; ?>!</h1>
-                        <h3>These are your assigned tasks:</h3>
-                        <div class="col-sm-6">
-                            <div class="list-group">
-                                <?php
-                                    include 'php/tasklist_process.php';
-                                ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Profile Information</h1>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>User</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><?php echo $_SESSION['username'] ?></td>
+                                                    <td><?php echo $_SESSION['user'] ?></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>   
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h1 class="panel-title"><i class="fa fa-exchange" aria-hidden="true"></i> Change Password</h1>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="col-sm-4">
+                                                <label> New Password: </label>
+                                            </div>
+                                            <form action="php/pass_change.php" method="POST">
+                                                <div class="col-sm-8 form-group">
+                                                        <input type="password" class="form-control" name="newpass">
+                                                </div>
+                                                <div class="col-xs-4 col-xs-offset-4">
+                                                    <button type="submit" class="btn btn-heb" value="Submit">Update</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>                             
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
 
-                <div class="page-header">
-                    <h1>Progress</h1>
-                </div>
-                <?php  
-                    include 'php/task_process.php';
-                ?>
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- /#page-wrapper -->
 
@@ -151,10 +174,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Task Updater -->
-    <script src="js/task_progress.js"></script>
 
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 

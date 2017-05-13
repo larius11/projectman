@@ -1,31 +1,60 @@
 <?php
     session_start();
+
     if(!isset($_SESSION['username'])){
-        $_SESSION['location'] = 'Location: ../tasks.php';
+        $_SESSION['location'] = 'Location: http://www.ricardoriveron.com/projectman/huddle.php';
         header("Location:php/login.php");
     }
+    if (isset($_POST["submit"])){
+
+        $target_dir = "huddles/";
+        $target_file = $target_dir . basename($_FILES["newhud"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+        $target_file = $target_dir . "huddle.pdf";
+
+        // Allow certain file formats
+        if($imageFileType != "pdf" ) {
+            echo "Sorry, only PDF files are allowed.";
+            $uploadOk = 0;
+        }
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+        } else {
+            // Check if file already exists
+            if (file_exists($target_file)) {
+                echo "We are tryting this...<br>";
+                $mademe = unlink('huddles/huddle.pdf');
+                echo "This is it: ". $mademe ."...";
+            }
+            echo "<br>About to upload...<br>";
+            if (move_uploaded_file($_FILES["newhud"]["tmp_name"], $target_file)) {
+                echo "The file ". basename( $_FILES["newhud"]["name"]). " has been uploaded.";
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        }
+    }else{
 ?>
 <html lang="en">
 <head>
 
-    <meta charset="utf-8">
+    <meta charset=utf-8 />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service - Tasks</title>
+    <title>Service - Huddles</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="icon" href="img/heb.ico">
-
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link rel="icon" href="img/heb.ico">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -36,13 +65,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -74,7 +99,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <?php
-                        $active = "task";
+                        $active = "huddle";
                         include 'php/nav.php';
                     ?>
                 </ul>
@@ -90,53 +115,45 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Tasks <small>Front End Tasks</small>
+                            Huddle <small>Notes</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-desktop"></i> Tasks
+                                <i class="fa fa-fw fa-users"></i> Huddles
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <?php 
-                    if ($_SESSION['clearance']>=1){
-                ?>
-                <!-- Task Page Heading  -->
-                <div class="page-header">
-                        <button type="submit" class="btn btn-primary btn-lg"><a href="tasks/add.php" style="color: #fff;">Assign Task</a></button>
-                        <button type="submit" class="btn btn-heb btn-lg"><a href="tasks/delete.php" style="color: #fff;">Remove Task</a></button>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <embed src="http://www.ricardoriveron.com/projectman/huddles/huddle.pdf" width="100%" height="100%" type='application/pdf' />
+                    </div>
                 </div>
+                <!-- /.row -->
+
+                <?php
+                    if ($_SESSION['clearance'] >= 1){
+                ?>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                        <br>
+                        <input type="file" name="newhud" id="newhud" class="btn btn-heb">
+                        <br>
+                        <button type="submit" class="btn btn-info" value="Submit" name="submit">Upload</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row -->
                 <?php
                     }
                 ?>
 
-                <!-- Main Task Panel -->
-                <div class="row" style="background-color: #eee;">
-                    <div class="jumbotron">
-                        <h1>Hello, <?php echo $_SESSION['username']; ?>!</h1>
-                        <h3>These are your assigned tasks:</h3>
-                        <div class="col-sm-6">
-                            <div class="list-group">
-                                <?php
-                                    include 'php/tasklist_process.php';
-                                ?>
-                            </div>
-                        </div>
-                    </div>                    
-                </div>
-
-                <div class="page-header">
-                    <h1>Progress</h1>
-                </div>
-                <?php  
-                    include 'php/task_process.php';
-                ?>
             </div>
             <!-- /.container-fluid -->
 
@@ -151,11 +168,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Task Updater -->
-    <script src="js/task_progress.js"></script>
 
-
+    <script src="js/plugins/morris/morris-data.js"></script>
 </body>
-
 </html>
+<?php
+    }
+?>

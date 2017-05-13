@@ -1,34 +1,33 @@
 <?php
     session_start();
     if(!isset($_SESSION['username'])){
-        $_SESSION['location'] = 'Location: ../tasks.php';
-        header("Location:php/login.php");
+       header("Location:../php/login.php");
     }
 ?>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service - Tasks</title>
-
+    <title>Service - Remove Task</title>
+    <!-- <link rel="stylesheet" href="../components/bootstrap2/css/bootstrap-responsive.css"> -->
+    <link rel="stylesheet" href="../css/calendar.css">
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="icon" href="img/heb.ico">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../css/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link href="../css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/general.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,13 +35,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Service Admin</a>
+                <a class="navbar-brand" href="../index.php">Service Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -75,68 +70,57 @@
                 <ul class="nav navbar-nav side-nav">
                     <?php
                         $active = "task";
-                        include 'php/nav.php';
+                        include '../php/nav.php';
                     ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-
         <div id="page-wrapper">
-
             <div class="container-fluid">
-
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Tasks <small>Front End Tasks</small>
+                            Tasks <small>Remove Task</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="../index.php">Dashboard</a>
                             </li>
-                            <li class="active">
-                                <i class="fa fa-desktop"></i> Tasks
+                            <li>
+                                <i class="fa fa-fw fa-bar-chart-o"></i><a href="../tasks.php"> Tasks</a>
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <?php 
-                    if ($_SESSION['clearance']>=1){
-                ?>
-                <!-- Task Page Heading  -->
-                <div class="page-header">
-                        <button type="submit" class="btn btn-primary btn-lg"><a href="tasks/add.php" style="color: #fff;">Assign Task</a></button>
-                        <button type="submit" class="btn btn-heb btn-lg"><a href="tasks/delete.php" style="color: #fff;">Remove Task</a></button>
-                </div>
-                <?php
-                    }
-                ?>
-
-                <!-- Main Task Panel -->
-                <div class="row" style="background-color: #eee;">
-                    <div class="jumbotron">
-                        <h1>Hello, <?php echo $_SESSION['username']; ?>!</h1>
-                        <h3>These are your assigned tasks:</h3>
-                        <div class="col-sm-6">
-                            <div class="list-group">
-                                <?php
-                                    include 'php/tasklist_process.php';
-                                ?>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <i class="fa fa-fw fa-trash-o"></i>Remove Task Form
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <form action="delete_process.php" method="POST">
+                                    <div class="col-lg-8">
+                                        <label>Tasks:</label>
+                                        <select type="text" class="form-control" name="event[]">
+                                            <?php echo ($output); ?>
+                                        </select>
+                                        <br>
+                                        <button type="submit" class="btn btn-heb btn-lg" value="Submit">Remove</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
+                <!-- /.row -->
 
-                <div class="page-header">
-                    <h1>Progress</h1>
-                </div>
-                <?php  
-                    include 'php/task_process.php';
-                ?>
             </div>
             <!-- /.container-fluid -->
 
@@ -147,14 +131,10 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Task Updater -->
-    <script src="js/task_progress.js"></script>
-
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 

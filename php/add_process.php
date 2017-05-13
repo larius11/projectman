@@ -38,7 +38,6 @@
 	    }
 
 		$col = "ID, title, url, class, start, end";
-		$val = "NULL, '$title', '$url', '$class', '$start', '$end'";
 
 		$stmt = $db_conx->prepare("INSERT INTO  events_list ($col) VALUES (NULL, ?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssii", $one, $two, $three, $four, $five);
@@ -50,7 +49,20 @@
 		$five=$end;
 		$stmt->execute();
 
-		$stmt = $db_conx->prepare("SELECT * FROM events_list WHERE title=?");
+		session_start();
+
+		date_default_timezone_set('America/Chicago');
+		$this_time =date("Y-m-d H:i:s", strtotime("now"));
+		$this_item = "<i class=\"fa fa-fw fa-plus-square-o\"></i> Added ".$title." to Calendar";
+		$this_by = $_SESSION['username'];
+
+		$col = "ID, panel_item, panel_time, panel_by";
+
+		$stmt = $db_conx->prepare("INSERT INTO  panel_list ($col) VALUES (NULL, ?, '$this_time', ?)");
+		$stmt->bind_param("ss", $this_item, $this_by);
+		$stmt->execute();
+
+		$stmt = $db_conx->prepare("SELECT * FROM events_list WHERE title=? AND start=$four");
 		$stmt->bind_param("s", $six);
 		$six = $title;
 		$stmt->execute();

@@ -1,25 +1,23 @@
 <?php
     session_start();
     if(!isset($_SESSION['username'])){
-        $_SESSION['location'] = 'Location: ../tasks.php';
+        $_SESSION['location'] = 'Location: http://www.ricardoriveron.com/projectman/taskpanel.php';
         header("Location:php/login.php");
     }
 ?>
 <html lang="en">
 <head>
 
-    <meta charset="utf-8">
+    <meta charset=utf-8 />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Service - Tasks</title>
+    <title>Service - Task Panel</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="icon" href="img/heb.ico">
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
@@ -29,6 +27,11 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,7 +77,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <?php
-                        $active = "task";
+                        $active = "dash";
                         include 'php/nav.php';
                     ?>
                 </ul>
@@ -90,53 +93,36 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Tasks <small>Front End Tasks</small>
+                            Dashboard <small>Task Panel</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-desktop"></i> Tasks
+                                <i class="fa fa-dashboard"></i> <a href="index.php">Dashboard</a>
                             </li>
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
 
-                <?php 
-                    if ($_SESSION['clearance']>=1){
-                ?>
-                <!-- Task Page Heading  -->
-                <div class="page-header">
-                        <button type="submit" class="btn btn-primary btn-lg"><a href="tasks/add.php" style="color: #fff;">Assign Task</a></button>
-                        <button type="submit" class="btn btn-heb btn-lg"><a href="tasks/delete.php" style="color: #fff;">Remove Task</a></button>
-                </div>
-                <?php
-                    }
-                ?>
-
-                <!-- Main Task Panel -->
-                <div class="row" style="background-color: #eee;">
-                    <div class="jumbotron">
-                        <h1>Hello, <?php echo $_SESSION['username']; ?>!</h1>
-                        <h3>These are your assigned tasks:</h3>
-                        <div class="col-sm-6">
-                            <div class="list-group">
-                                <?php
-                                    include 'php/tasklist_process.php';
-                                ?>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Task Panel</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <?php
+                                        include 'php/db_service.php';
+                                        $amount = -1;
+                                        include 'php/panel/panel.php';
+                                    ?>
+                                </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
 
-                <div class="page-header">
-                    <h1>Progress</h1>
-                </div>
-                <?php  
-                    include 'php/task_process.php';
-                ?>
             </div>
             <!-- /.container-fluid -->
 
@@ -151,10 +137,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Task Updater -->
-    <script src="js/task_progress.js"></script>
 
+    <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 

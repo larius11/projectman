@@ -1,40 +1,89 @@
 <?php	
+	if ($_SERVER['HTTP_HOST'] == "ricardoriveron.com"){
+	   header("Location: http://www.ricardoriveron.com/projectman/php/login.php");
+	} 
 	if (isSet($_POST['user'])){
 
 		include 'db_service.php';
 		session_start();
+		if(empty($_SESSION['location'])){
+			$_SESSION['location'] = 'Location: http://www.ricardoriveron.com/projectman/index.php';
+		}
 
-		$username = mysqli_real_escape_string($db_conx, $_POST['user']);
-        $password = mysqli_real_escape_string($db_conx, $_POST['pass']);
+		$username = strtolower($_POST['user']);
+        $password = $_POST['pass'];
 
-        $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=? AND pass=?");
-        $stmt->bind_param("ss", $one, $two);
+        $stmt = $db_conx->prepare("SELECT * FROM users WHERE user=?");
+        $stmt->bind_param("s", $one);
 
         $one = $username;
-        $two = $password;
         $stmt->execute();
         $result = $stmt->get_result();
         $rowNum = $result->num_rows;
         if($rowNum > 0){
 			if ($row = $result->fetch_assoc()){
-				if ($username == "riveronr"){
-					$username = " Ricardo Riveron";
-				}
-				if ($username == "m6484830"){
-					$username = " Antonio Martinez";
-				}
+				if (password_verify($password, $row['pass'])){
 
-	            $_SESSION['username'] = $username;
-	            $_SESSION['password'] = $password;
-	            mysqli_close();
-				header("Refresh:0");
-	            header('Location: ../index.php');
-	            exit;
+					$_SESSION['user'] = $username;
+					$_SESSION['clearance'] = 0;
+
+					if ($username == "riveronr"){
+						$username = " Ricardo Riveron";
+						$_SESSION['clearance'] = 1;
+					}
+					if ($username == "m6a48483"){
+						$username = " Antonio Martinez";
+						$_SESSION['clearance'] = 1;
+					}
+					if ($username == "m197308"){
+						$username = " Jessica Moffett";
+						$_SESSION['clearance'] = 3;
+					}
+					if ($username == "s730637"){
+						$username = " Mark Stern";
+					}
+					if ($username == "h101186"){
+						$username = " Jackie Hamill";
+					}
+					if ($username == "r252501"){
+						$username = " Pam Ratliff";
+						$_SESSION['clearance'] = 1;
+					}
+					if ($username == "p618325"){
+						$username = " D-Ray";
+						$_SESSION['clearance'] = 2;
+					}
+					if ($username == "m111000"){
+						$username = " Jackie Milligan";
+						$_SESSION['clearance'] = 2;
+					}
+					if ($username == "g718377"){
+						$username = " Will Griffin";
+						$_SESSION['clearance'] = 1;
+					}
+					if ($username == "l368470"){
+						$username = " Stephy Luna";
+					}
+					if ($username == "a671948"){
+						$username = " Marwan Abbood";
+					}
+
+		            $_SESSION['username'] = $username;
+		            $_SESSION['password'] = $password;
+		            mysqli_close();
+					header("Refresh:0");
+		            header($_SESSION['location']);
+		        }else{
+		        	$_SESSION["pass_error"] = 1;
+		        	header('Location: http://www.ricardoriveron.com/projectman/php/login.php');
+		        }
 	        }
 	    }else{
-            echo "<p>Data does not match <br /> RE-Enter Username and Password</p>";
+	    	$_SESSION["user_error"] = 1;
+            header('Location: http://www.ricardoriveron.com/projectman/php/login.php');
         }
 	}else{	
+		session_start();
 ?>
 
 <html lang="en">
@@ -78,6 +127,22 @@
 									<!-- <div class="login-help">
 										<a href="#">Forgot Password</a>
 									</div> -->
+									<?php 
+										if ($_SESSION["pass_error"]){
+											echo "
+												<h3 style=\"color:red; text-align: center;\">Incorrect Password</h3>
+											";
+											$_SESSION["pass_error"] = 0;
+										}
+									?>
+									<?php 
+										if ($_SESSION["user_error"]){
+											echo "
+												<h3 style=\"color:red; text-align: center;\">Incorrect Username</h3>
+											";
+											$_SESSION["user_error"] = 0;
+										}
+									?>
 								</div>
 							</div>
 						</div>

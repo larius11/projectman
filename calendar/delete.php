@@ -2,7 +2,7 @@
 	include '../php/db_service.php';
 	session_start();
 
-	$stmt = $db_conx->prepare("SELECT * FROM events_list");
+	$stmt = $db_conx->prepare("SELECT * FROM events_list ORDER BY start ASC");
 	$stmt->execute();
 	$result = $stmt->get_result();
 
