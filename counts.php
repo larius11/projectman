@@ -125,17 +125,6 @@
                                           }).select(0);
                                     </script>
                                 </div>
-                                <?php
-                                    if ($_SESSION['clearance']>=3){
-                                ?>
-                                <div class="col-xs-offset-4 col-xs-4 col-md-offset-5 col-md-4">
-                                    <form action="counts/php/reset.php" method="get">
-                                        <button type="submit" class="btn btn-heb btn-lg" value="Submit"><strong>Reset!</strong></button>
-                                    </form>
-                                </div>
-                                <?php
-                                    }
-                                ?>
                             </div>
                         </div>
                     </div>

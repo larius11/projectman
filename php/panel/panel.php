@@ -1,6 +1,6 @@
 <?php 
 	// MAKE SURE TO ESTABLISH CONNECTION BEFORE INCLUDING FUNCTION!
-	session_start();
+	// session_start();
 	if ($amount == -1){
 		$stmt = $db_conx->prepare("SELECT * FROM panel_list ORDER BY panel_time DESC");
 	}else{

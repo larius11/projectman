@@ -21,14 +21,9 @@
     <!-- Custom CSS -->
     <link href="../css/sb-admin.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="../css/plugins/morris.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap CSS for timeline -->
-    <link href="css/timeline.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -130,15 +125,39 @@
                             </div>
                             <div class="panel-body">
                                 <form action="add_process.php" method="POST">
+                                <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Task:</label>
                                             <select type="text" class="form-control" id="duty" name="duty" onchange="return formOptions()">
-                                                <option>Closing Duties</option>
-                                                <option>Opening Duties</option>
                                                 <option>Recognize Partners</option>
+                                                <!-- <option>Huddles</option> -->
                                                 <option>Other</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Assign To:</label>
+                                            <select type="text" class="form-control" id="assign" name="assign">
+                                                <option>Ricardo Riveron</option>
+                                                <option>Antonio Martinez</option>
+                                                <option>Jessica Moffett</option>
+                                                <option>Mark Stern</option>
+                                                <option>Jackie Hamill</option>
+                                                <option>Pam Ratliff</option>
+                                                <option>D-Ray</option>
+                                                <option>Jackie Milligan</option>
+                                                <option>Will Griffin</option>
+                                                <option>Stephanie Luna</option>
+                                                <option>Marwan Abbood</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
                                             <div id="partners" style="padding-top: 5px; display: none;">
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading">
@@ -146,6 +165,33 @@
                                                     </div>
                                                     <div class="panel-body">
                                                         <textarea type="text" class="form-control" rows="2" id="recfor" name="recfor" style="resize: none;" placeholder="'BPTS' or 'IPM's' or '9 on survey' etc..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <label class="panel-title">Select Partners</label>
+                                                    </div>
+                                                    <div class="panel-body" style="overflow: auto; padding-left: 0px;">
+                                                        <div class="form-group">
+                                                            <ul class="timeline" style="height: 35%; padding-top: 0px;">
+                                                                <?php
+                                                                    include '../php/db_service.php';
+                                                                    include '../php/partners_option.php';
+                                                                ?>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="huddles" style="padding-top: 5px; display: none;">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <label class="panel-title">Huddle Notes</label>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="form-group input-group">
+                                                            <input type="file" accept="application/pdf" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="panel panel-default">
@@ -195,26 +241,14 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Assign To:</label>
-                                            <select type="text" class="form-control" id="assign" name="assign">
-                                                <option>Ricardo Riveron</option>
-                                                <option>Antonio Martinez</option>
-                                                <option>Jessica Moffett</option>
-                                                <option>Mark Stern</option>
-                                                <option>Jackie Hamill</option>
-                                                <option>Pam Ratliff</option>
-                                                <option>D-Ray</option>
-                                                <option>Jackie Milligan</option>
-                                                <option>Will Griffin</option>
-                                                <option>Stephanie Luna</option>
-                                                <option>Marwan Abbood</option>
-                                            </select>
-                                        </div>
+
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-lg-6 col-lg-offset-3">
                                         <button type="submit" class="btn btn-heb btn-lg" style="width: 100%;" value="Submit">Assign</button>
                                     </div>
+                                </div>
                                 </form>
                             </div>
                         </div>
@@ -236,11 +270,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../js/plugins/morris/raphael.min.js"></script>
-    <script src="../js/plugins/morris/morris.min.js"></script>
-    <script src="../js/plugins/morris/morris-data.js"></script>
 
     <!-- Options JS -->
     <script src="../js/task_options.js"></script>

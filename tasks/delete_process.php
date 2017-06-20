@@ -36,7 +36,7 @@
 	if ($my_event[2] == "m111000"){
 		$this_name = " Jackie Milligan";
 	}
-	if ($my_event[2] == "w718377"){
+	if ($my_event[2] == "g718377"){
 		$this_name = " Will Griffin";
 	}
 	if ($my_event[2] == "l368470"){

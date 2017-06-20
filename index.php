@@ -106,7 +106,7 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-5 col-md-5">
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
@@ -134,6 +134,29 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-sort-amount-desc fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <h2> 
+                                            Team Progress
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <?php
+                                        include 'tasks/all_display.php';
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

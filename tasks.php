@@ -119,24 +119,53 @@
                 <!-- Main Task Panel -->
                 <div class="row" style="background-color: #eee;">
                     <div class="jumbotron">
-                        <h1>Hello, <?php echo $_SESSION['username']; ?>!</h1>
-                        <h3>These are your assigned tasks:</h3>
-                        <div class="col-sm-6">
+                        <h2>Hello, <?php echo $_SESSION['username']; ?>!</h2>
+                        <h3>Assigned tasks:</h3>
+                        <div class="col-sm-12">
                             <div class="list-group">
                                 <?php
                                     include 'php/tasklist_process.php';
                                 ?>
                             </div>
                         </div>
+                        <h3>Daily tasks:</h3>
+                        <div class="col-sm-12">
+                            <div class="list-group">
+                                <?php
+                                    include 'tasks/daily.php';
+                                ?>
+                            </div>
+                        </div>
                     </div>                    
                 </div>
+                <br>
 
-                <div class="page-header">
-                    <h1>Progress</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Daily Progress</h1>
+                            </div>
+                            <div class="panel-body">
+                                <?php include 'tasks/daily_process.php'; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <?php  
-                    include 'php/task_process.php';
-                ?>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Progress On Assignments</h1>
+                            </div>
+                            <div class="panel-body">
+                                <?php include 'php/task_process.php'; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- /.container-fluid -->
 

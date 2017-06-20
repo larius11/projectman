@@ -46,6 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
 
     <title>Service - Huddles</title>
 

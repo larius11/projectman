@@ -31,7 +31,7 @@
 						$username = " Ricardo Riveron";
 						$_SESSION['clearance'] = 1;
 					}
-					if ($username == "m6a48483"){
+					if ($username == "m648483"){
 						$username = " Antonio Martinez";
 						$_SESSION['clearance'] = 1;
 					}

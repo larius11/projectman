@@ -8,6 +8,12 @@ function formOptions(){
 		$("#recfor").val('');
 	}
 
+	if(selection=="Huddles"){
+		document.getElementById("huddles").style.display = "block";
+	}else{
+		document.getElementById("huddles").style.display = "none";
+	}
+
 	if(selection=="Other"){
 		document.getElementById("otherinfo").style.display = "block";
 	}else{

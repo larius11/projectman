@@ -14,6 +14,9 @@
     	while ($row = $result->fetch_assoc()){
 	    	if ($row["assign"]==$to){
 	    		$title = $row["title"];
+	    		if (substr_compare($title, "Recognize Partners -", 0, 20, TRUE) == 0){
+	    			$title = substr($title, 20);
+	    		}
 	    		$per = $row["completion"];
 	    		$up_id = $row["ID"];
 			    $stmt = $db_conx->prepare("UPDATE tasks SET seen=1 WHERE ID=$up_id");
